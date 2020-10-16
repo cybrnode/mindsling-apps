@@ -10,72 +10,95 @@ class _ResetPasswordState extends State<ResetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text('App Bar'),
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Image.asset(
+          'assets/mind-01_3.png',
+          fit: BoxFit.fill,
+        ),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 25.0, 0, 25.0),
-                child: Text(
-                  'Reset Password',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
+        child: Padding(
+          padding: const EdgeInsets.all(35.0),
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: MediaQuery.of(context).size.height / 8,
+                width: MediaQuery.of(context).size.width,
+                child: Image(
+                  image: AssetImage("assets/logo.jpg"),
                 ),
               ),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height / 5,
-              width: MediaQuery.of(context).size.width,
-              child: Image(
-                image: AssetImage('assets/logo.jpg'),
-              ),
-            ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 30.0),
+              SizedBox(height: 30),
+              Container(
                 child: Text(
                   'Reset your Password',
                   style: TextStyle(
                     fontSize: 30,
-                    color: Colors.blue,
+                    color: Colors.teal[400],
                   ),
                 ),
               ),
-            ),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 30.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(FontAwesomeIcons.userLock),
-                    hintText: 'New Password',
+              SizedBox(height: 30),
+              Column(
+                // mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    child: TextField(
+                      textAlignVertical: TextAlignVertical.bottom,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(10),
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.teal[400],
+                        ),
+                        hintText: 'New Password',
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    child: TextField(
+                      textAlignVertical: TextAlignVertical.bottom,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(10),
+                        prefixIcon: Icon(
+                          FontAwesomeIcons.userLock,
+                          color: Colors.teal[400],
+                        ),
+                        hintText: ' Confirm Password',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height / 7,
+                width: MediaQuery.of(context).size.width,
+              ),
+              ButtonTheme(
+                minWidth: MediaQuery.of(context).size.width,
+                height: 47.0,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/resetPassword');
+                  },
+                  color: Colors.teal[400],
+                  child: Text(
+                    'Proceed',
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
-            ),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(30.0, 5.0, 30.0, 30.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(FontAwesomeIcons.userLock),
-                    hintText: 'New Password',
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(25.0, 30.0, 25.0, 20.0),
-              child: RaisedButton(
-                onPressed: () {},
-                child: Text('Proceed'),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
