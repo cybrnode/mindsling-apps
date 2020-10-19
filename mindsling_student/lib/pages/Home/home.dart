@@ -12,7 +12,23 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppTheme.appBarHome,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Image.asset(
+          'assets/mind-01_3.png',
+          fit: BoxFit.fill,
+        ),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(FontAwesomeIcons.bell),
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications');
+            },
+          ),
+        ],
+      ),
       body: Column(
         children: <Widget>[
           Stack(
@@ -56,9 +72,7 @@ class _HomeState extends State<Home> {
                                   flex: 2,
                                   child: Text(
                                     'John Doe',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20),
+                                    style: AppTheme.homeCardText,
                                   ),
                                 ),
                                 Spacer(),
@@ -66,8 +80,7 @@ class _HomeState extends State<Home> {
                                   flex: 4,
                                   child: Text(
                                     'Class 8th, B',
-                                    style: TextStyle(
-                                        color: Colors.grey[400], fontSize: 20),
+                                    style: AppTheme.homeCardsubText,
                                   ),
                                 ),
                               ],
@@ -144,11 +157,8 @@ class _HomeState extends State<Home> {
                               // backgroundImage: AssetImage(
                               //   'assets/greyhome-05.png',
                               // ),
-                              child: Icon(
-                                FontAwesomeIcons.bookOpen,
-                                color: Colors.grey,
-                              ),
-                              backgroundColor: Colors.grey[200],
+                              child: Image.asset('assets/icons/diary.png'),
+                              backgroundColor: AppTheme.iconBGColor,
                               // backgroundColor: Colors.teal[100],
                             ),
                           ],
@@ -191,13 +201,10 @@ class _HomeState extends State<Home> {
                               // backgroundImage:
                               //     AssetImage('assets/classes-02.png'),
                               // backgroundColor: Colors.white,
-                              child: Icon(
-                                FontAwesomeIcons.chalkboard,
-                                color: Colors.grey,
-                              ),
-                              backgroundColor: Colors.grey[200],
+                              child: Image.asset('assets/icons/students.png'),
+
+                              backgroundColor: AppTheme.iconBGColor,
                             ),
-                            // backgroundColor: Colors.teal[100],
                           ],
                         ),
                         Text("Classes"),
@@ -237,11 +244,8 @@ class _HomeState extends State<Home> {
                               // backgroundImage:
                               //     AssetImage('assets/games-02.png'),
                               // backgroundColor: Colors.grey[200],
-                              child: Icon(
-                                FontAwesomeIcons.golfBall,
-                                color: Colors.grey,
-                              ),
-                              backgroundColor: Colors.grey[200],
+                              child: Image.asset('assets/icons/XMLID_344_.png'),
+                              backgroundColor: AppTheme.iconBGColor,
                             ),
                           ],
                         ),
@@ -279,11 +283,8 @@ class _HomeState extends State<Home> {
                           children: [
                             CircleAvatar(
                               radius: 30,
-                              child: Icon(
-                                FontAwesomeIcons.university,
-                                color: Colors.grey,
-                              ),
-                              backgroundColor: Colors.grey[200],
+                              child: Image.asset('assets/icons/Layer 7.png'),
+                              backgroundColor: AppTheme.iconBGColor,
                             ),
                           ],
                         ),
@@ -321,11 +322,9 @@ class _HomeState extends State<Home> {
                           children: [
                             CircleAvatar(
                               radius: 30,
-                              child: Icon(
-                                FontAwesomeIcons.video,
-                                color: Colors.grey,
-                              ),
-                              backgroundColor: Colors.grey[200],
+                              child: Image.asset(
+                                  'assets/icons/Learning-Lecture-Education-Online-Book.png'),
+                              backgroundColor: AppTheme.iconBGColor,
                             ),
                           ],
                         ),
@@ -363,11 +362,9 @@ class _HomeState extends State<Home> {
                           children: [
                             CircleAvatar(
                               radius: 30,
-                              child: Icon(
-                                FontAwesomeIcons.solidBell,
-                                color: Colors.grey,
-                              ),
-                              backgroundColor: Colors.grey[200],
+                              child: Image.asset(
+                                  'assets/icons/Icon ionic-ios-notifications.png'),
+                              backgroundColor: AppTheme.iconBGColor,
                             ),
                           ],
                         ),
@@ -406,11 +403,8 @@ class _HomeState extends State<Home> {
                           children: [
                             CircleAvatar(
                               radius: 30,
-                              child: Icon(
-                                FontAwesomeIcons.calendar,
-                                color: Colors.grey,
-                              ),
-                              backgroundColor: Colors.grey[200],
+                              child: Image.asset('assets/icons/timeline.png'),
+                              backgroundColor: AppTheme.iconBGColor,
                             ),
                           ],
                         ),
@@ -423,43 +417,46 @@ class _HomeState extends State<Home> {
                     Navigator.pushNamed(context, '/events');
                   },
                 ),
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10),
-                        bottomLeft: Radius.circular(10),
-                        bottomRight: Radius.circular(10)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 7,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          CircleAvatar(
-                            radius: 30,
-                            child: Icon(
-                              FontAwesomeIcons.chalkboardTeacher,
-                              color: Colors.grey,
+                InkResponse(
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              radius: 30,
+                              child: Image.asset(
+                                  'assets/icons/Icon awesome-chalkboard-teacher.png'),
+                              backgroundColor: AppTheme.iconBGColor,
                             ),
-                            backgroundColor: Colors.grey[200],
-                          ),
-                        ],
-                      ),
-                      Text("Tutor"),
-                    ],
+                          ],
+                        ),
+                        Text("Tutor"),
+                      ],
+                    ),
                   ),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/tutor');
+                  },
                 ),
               ],
             ),

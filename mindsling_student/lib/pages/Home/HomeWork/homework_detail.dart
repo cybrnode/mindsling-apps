@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/size_config.dart';
+import 'package:mindsling_student/styling.dart';
 
 class HomeWorkDetail extends StatefulWidget {
   @override
@@ -50,10 +52,7 @@ class _HomeWorkDetailState extends State<HomeWorkDetail> {
                     children: [
                       TextSpan(
                         text: 'Home Work',
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: const Color(0xff000000),
-                            fontWeight: FontWeight.w600),
+                        style: AppTheme.title,
                       ),
                     ],
                   ),
@@ -76,7 +75,7 @@ class _HomeWorkDetailState extends State<HomeWorkDetail> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Text('English'),
+                                Text('English', style: AppTheme.headerText2),
                                 Spacer(
                                   flex: 3,
                                 ),
@@ -85,12 +84,13 @@ class _HomeWorkDetailState extends State<HomeWorkDetail> {
                                   color: Colors.grey[400],
                                   size: 18,
                                 ),
-                                // SizedBox(width: 10),
-                                // spacer()
-                                Text(
-                                  ' 8 am - 9 am',
-                                  style: TextStyle(
-                                    color: Colors.grey[400],
+                                Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Text(
+                                    ' 8 am - 9 am',
+                                    style: TextStyle(
+                                      color: Colors.grey[400],
+                                    ),
                                   ),
                                 ),
                               ],
@@ -100,8 +100,6 @@ class _HomeWorkDetailState extends State<HomeWorkDetail> {
                               height: 50.0,
                             ),
                             Row(
-                              // mainAxisAlignment: MainAxisAlignment.center,
-                              // mainAxisSize: MainAxisSize.min,
                               children: [
                                 Flexible(
                                   flex: 2,
@@ -163,8 +161,6 @@ class _HomeWorkDetailState extends State<HomeWorkDetail> {
                               height: 30,
                             ),
                             Row(
-                              // mainAxisAlignment: MainAxisAlignment.center,
-                              // mainAxisSize: MainAxisSize.min,
                               children: [
                                 Flexible(
                                   flex: 2,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindsling_student/styling.dart';
+import 'package:mindsling_student/size_config.dart';
 
 class Exams extends StatefulWidget {
   @override
@@ -18,22 +19,16 @@ class _ExamsState extends State<Exams> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                Container(
-                  height: 30.0,
-                  width: MediaQuery.of(context).size.width,
-                ),
                 Column(
                   children: [
                     Center(
                       child: Text(
                         'Exams',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 30),
+                        style: AppTheme.title,
                       ),
                     ),
-                    Container(
-                      height: 40.0,
-                      width: MediaQuery.of(context).size.width,
+                    SizedBox(
+                      height: 4.85 * SizeConfig.heightMultiplier,
                     ),
                     Container(
                       child: AspectRatio(
@@ -48,10 +43,10 @@ class _ExamsState extends State<Exams> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('English'),
+                                    Text('English', style: AppTheme.headerText),
                                     Text(
                                       '6 Tue, 12:00PM',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      style: AppTheme.subText,
                                     ),
                                   ],
                                 ),
@@ -74,11 +69,9 @@ class _ExamsState extends State<Exams> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('Math'),
-                                    Text(
-                                      '6 Tue, 12:00PM',
-                                      style: TextStyle(color: Colors.grey[400]),
-                                    ),
+                                    Text('Math', style: AppTheme.headerText),
+                                    Text('6 Tue, 12:00PM',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                               ],

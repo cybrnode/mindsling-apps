@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/size_config.dart';
 import 'package:mindsling_student/styling.dart';
 
 class HomeWork extends StatefulWidget {
@@ -11,7 +13,24 @@ class _HomeWorkState extends State<HomeWork> {
   Widget build(BuildContext context) {
     return Scaffold(
       // extendBodyBehindAppBar: true,
-      appBar: AppTheme.appBar,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
+        elevation: 0,
+        title: Image.asset(
+          'assets/mind-01_3.png',
+          fit: BoxFit.fill,
+        ),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(FontAwesomeIcons.bell),
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: Column(
         children: <Widget>[
           Container(
@@ -26,12 +45,9 @@ class _HomeWorkState extends State<HomeWork> {
                   style: AppTheme.title,
                 ),
               ),
-              Container(
-                height: MediaQuery.of(context).size.height / 8,
-                width: MediaQuery.of(context).size.width,
-              ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                padding: EdgeInsets.symmetric(
+                    vertical: 4.62 * SizeConfig.widthMultiplier),
                 child: Column(
                   children: <Widget>[
                     Card(
@@ -41,7 +57,7 @@ class _HomeWorkState extends State<HomeWork> {
                         ),
                         trailing: Icon(Icons.keyboard_arrow_right),
                         onTap: () {
-                          Text('Another data');
+                          Navigator.pushNamed(context, '/homework_detail');
                         },
                       ),
                     ),
@@ -52,7 +68,7 @@ class _HomeWorkState extends State<HomeWork> {
                         ),
                         trailing: Icon(Icons.keyboard_arrow_right),
                         onTap: () {
-                          Text('Another data');
+                          Navigator.pushNamed(context, '/homework_detail');
                         },
                       ),
                     ),
@@ -63,7 +79,7 @@ class _HomeWorkState extends State<HomeWork> {
                         ),
                         trailing: Icon(Icons.keyboard_arrow_right),
                         onTap: () {
-                          Text('Another data');
+                          Navigator.pushNamed(context, '/homework_detail');
                         },
                       ),
                     ),

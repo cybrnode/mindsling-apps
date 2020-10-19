@@ -37,7 +37,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 3.64 * SizeConfig.heightMultiplier),
                 Column(
                   // mainAxisSize: MainAxisSize.max,
                   children: [
@@ -102,7 +102,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                 ),
-                SizedBox(height: 5 * SizeConfig.heightMultiplier),
+                SizedBox(height: 20 * SizeConfig.heightMultiplier),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

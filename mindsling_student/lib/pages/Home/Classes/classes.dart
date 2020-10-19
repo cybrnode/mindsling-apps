@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/styling.dart';
 
 class Classes extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _ClassesState extends State<Classes> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: IconThemeData(
-          color: Colors.black, //change your color here
+          color: Colors.black,
         ),
         title: Image.asset(
           'assets/mind-01_3.png',
@@ -35,17 +36,12 @@ class _ClassesState extends State<Classes> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                Container(
-                  height: 30.0,
-                  width: MediaQuery.of(context).size.width,
-                ),
                 Column(
                   children: [
                     Center(
                       child: Text(
-                        'Home Work',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 30),
+                        'Classes',
+                        style: AppTheme.title,
                       ),
                     ),
                     Container(
@@ -57,7 +53,7 @@ class _ClassesState extends State<Classes> {
                         aspectRatio: 4 / 2,
                         child: Card(
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: EdgeInsets.all(15.0),
                             child: Column(
                               // crossAxisAlignment: CrossAxisAlignment.sta,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -65,19 +61,23 @@ class _ClassesState extends State<Classes> {
                               children: [
                                 Row(
                                   children: [
-                                    Text('Monday'),
+                                    Text(
+                                      'Monday',
+                                      style: AppTheme.headerText,
+                                    ),
                                   ],
                                 ),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('English'),
-                                    // Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    // Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                                 // Spacer(),
@@ -85,23 +85,25 @@ class _ClassesState extends State<Classes> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Text('English'),
-                                    Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                                 // Spacer(),
                                 Row(
                                   children: [
-                                    Text('English'),
-                                    Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                               ],
@@ -123,19 +125,20 @@ class _ClassesState extends State<Classes> {
                               children: [
                                 Row(
                                   children: [
-                                    Text('Monday'),
+                                    Text('Monday', style: AppTheme.headerText),
                                   ],
                                 ),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('English'),
-                                    // Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    // Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                                 // Spacer(),
@@ -143,23 +146,25 @@ class _ClassesState extends State<Classes> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Text('English'),
-                                    Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                                 // Spacer(),
                                 Row(
                                   children: [
-                                    Text('English'),
-                                    Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                               ],
@@ -181,19 +186,20 @@ class _ClassesState extends State<Classes> {
                               children: [
                                 Row(
                                   children: [
-                                    Text('Monday'),
+                                    Text('Monday', style: AppTheme.headerText),
                                   ],
                                 ),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('English'),
-                                    // Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    // Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                                 // Spacer(),
@@ -201,23 +207,25 @@ class _ClassesState extends State<Classes> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Text('English'),
-                                    Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                                 // Spacer(),
                                 Row(
                                   children: [
-                                    Text('English'),
-                                    Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                               ],
@@ -239,19 +247,20 @@ class _ClassesState extends State<Classes> {
                               children: [
                                 Row(
                                   children: [
-                                    Text('Monday'),
+                                    Text('Monday', style: AppTheme.headerText),
                                   ],
                                 ),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('English'),
-                                    // Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    // Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                                 // Spacer(),
@@ -259,23 +268,25 @@ class _ClassesState extends State<Classes> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Text('English'),
-                                    Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                                 // Spacer(),
                                 Row(
                                   children: [
-                                    Text('English'),
-                                    Spacer(),
                                     Text(
-                                      '8 am - 9 am',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'English',
+                                      style: AppTheme.rowText,
                                     ),
+                                    Spacer(),
+                                    Text('8 am - 9 am',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                               ],

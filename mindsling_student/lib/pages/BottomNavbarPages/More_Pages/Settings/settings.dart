@@ -101,7 +101,7 @@ class _SettingsState extends State<Settings> {
                           ),
                           trailing: Icon(Icons.keyboard_arrow_right),
                           onTap: () {
-                            // Text('Another data');
+                            Navigator.pushNamed(context, '/resetPassword');
                           },
                         ),
                       ),

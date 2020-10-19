@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindsling_student/size_config.dart';
 import 'package:mindsling_student/styling.dart';
 
 class Games extends StatefulWidget {
@@ -18,10 +19,6 @@ class _GamesState extends State<Games> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                Container(
-                  height: 30.0,
-                  width: MediaQuery.of(context).size.width,
-                ),
                 Column(
                   children: [
                     Center(
@@ -30,9 +27,8 @@ class _GamesState extends State<Games> {
                         style: AppTheme.title,
                       ),
                     ),
-                    Container(
-                      height: 40.0,
-                      width: MediaQuery.of(context).size.width,
+                    SizedBox(
+                      height: 4.85 * SizeConfig.heightMultiplier,
                     ),
                     Container(
                       child: AspectRatio(
@@ -47,18 +43,22 @@ class _GamesState extends State<Games> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('Cricket'),
                                     Text(
-                                      '6 Tue, 12:00PM',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'Cricket',
+                                      style: AppTheme.headerText,
                                     ),
+                                    Text('6 Tue, 12:00PM',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('Team A'),
+                                    Text(
+                                      'Team A',
+                                      style: AppTheme.rowText,
+                                    ),
                                   ],
                                 ),
                               ],
@@ -80,18 +80,22 @@ class _GamesState extends State<Games> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('Cricket'),
                                     Text(
-                                      '6 Tue, 12:00PM',
-                                      style: TextStyle(color: Colors.grey[400]),
+                                      'Cricket',
+                                      style: AppTheme.headerText,
                                     ),
+                                    Text('6 Tue, 12:00PM',
+                                        style: AppTheme.subText),
                                   ],
                                 ),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('Team B'),
+                                    Text(
+                                      'Team B',
+                                      style: AppTheme.rowText,
+                                    ),
                                   ],
                                 ),
                               ],

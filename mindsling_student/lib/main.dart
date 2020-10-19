@@ -13,6 +13,7 @@ import 'package:mindsling_student/pages/Home/Classmates/classmates.dart';
 import 'package:mindsling_student/pages/Home/HomeWork/homework_detail.dart';
 import 'package:mindsling_student/pages/Home/VideoLectures/videolectures.dart';
 import 'package:mindsling_student/pages/Home/Event/event.dart';
+import 'package:mindsling_student/pages/Home/Tutor/tutor.dart';
 import 'package:mindsling_student/pages/login.dart';
 import 'package:mindsling_student/pages/resetPassword.dart';
 import 'package:mindsling_student/pages/signup.dart';
@@ -47,6 +48,7 @@ void main() => runApp(LayoutBuilder(
                 '/exams': (context) => Exams(),
                 '/videolectures': (context) => VideoLectures(),
                 '/events': (context) => Events(),
+                '/tutor': (context) => Tutor(),
                 '/create_post': (context) => CreatePost(),
                 '/profile': (context) => UpdateProfile(),
                 '/more': (context) => MorePages(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/size_config.dart';
 import 'package:mindsling_student/styling.dart';
 
 class Events extends StatefulWidget {
@@ -12,11 +13,30 @@ class _EventsState extends State<Events> {
   Widget build(BuildContext context) {
     return Scaffold(
       // extendBodyBehindAppBar: true,
-      appBar: AppTheme.appBar,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
+        elevation: 0,
+        title: Image.asset(
+          'assets/mind-01_3.png',
+          fit: BoxFit.fill,
+        ),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(FontAwesomeIcons.bell),
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(
+              5.2 / (SizeConfig.widthMultiplier * SizeConfig.heightMultiplier),
+            ),
             child: Column(
               children: [
                 // Container(
@@ -25,6 +45,7 @@ class _EventsState extends State<Events> {
                 // ),
                 Column(
                   children: [
+                    SizedBox(height: 30),
                     Center(
                       child: Text(
                         'Event',
@@ -32,66 +53,62 @@ class _EventsState extends State<Events> {
                       ),
                     ),
                     SizedBox(height: 30),
-                    Container(
-                      height: 25,
-                      width: MediaQuery.of(context).size.width,
-                    ),
-                    Container(
-                      child: ButtonBar(
-                        mainAxisSize: MainAxisSize
-                            .min, // this will take space as minimum as posible(to center)
-                        children: <Widget>[
-                          ButtonTheme(
-                            minWidth: MediaQuery.of(context).size.width / 4,
-                            height: 41.0,
-                            child: RaisedButton(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ),
-                              onPressed: () {
-                                Navigator.pushNamed(context, '/home');
-                              },
-                              color: Colors.teal[400],
-                              child: Text(
-                                'Today',
-                                style: TextStyle(color: Colors.white),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Container(
+                        child: ButtonBar(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            ButtonTheme(
+                              minWidth: MediaQuery.of(context).size.width / 4,
+                              height: 41.0,
+                              child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(21.0),
+                                ),
+                                onPressed: () {},
+                                color: Colors.teal[400],
+                                child: Text(
+                                  'Today',
+                                  style: TextStyle(color: Colors.white),
+                                ),
                               ),
                             ),
-                          ),
-                          ButtonTheme(
-                            minWidth: MediaQuery.of(context).size.width / 4,
-                            height: 47.0,
-                            child: RaisedButton(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ),
-                              onPressed: () {},
-                              highlightColor:
-                                  Colors.teal[400], //Replace with actual colors
-                              color: Colors.white,
-                              // color: Colors.teal[400],
-                              child: Text(
-                                'Up coming',
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                            ),
-                          ),
-                          ButtonTheme(
-                            minWidth: MediaQuery.of(context).size.width / 4,
-                            height: 47.0,
-                            child: RaisedButton(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ),
-                              onPressed: () {},
-                              color: Colors.white,
-                              child: Text(
-                                'Previous',
-                                style: TextStyle(color: Colors.grey),
+                            ButtonTheme(
+                              minWidth: MediaQuery.of(context).size.width / 4,
+                              height: 47.0,
+                              child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(21.0),
+                                ),
+                                onPressed: () {},
+                                highlightColor: Colors
+                                    .teal[400], //Replace with actual colors
+                                color: Colors.white,
+                                // color: Colors.teal[400],
+                                child: Text(
+                                  'Up coming',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                            ButtonTheme(
+                              minWidth: MediaQuery.of(context).size.width / 4,
+                              height: 47.0,
+                              child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(21.0),
+                                ),
+                                onPressed: () {},
+                                color: Colors.white,
+                                child: Text(
+                                  'Previous',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Column(
