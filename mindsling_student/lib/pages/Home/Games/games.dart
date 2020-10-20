@@ -16,7 +16,9 @@ class _GamesState extends State<Games> {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.symmetric(
+                horizontal: 4.63 * SizeConfig.widthMultiplier,
+                vertical: 2.42 * SizeConfig.heightMultiplier),
             child: Column(
               children: [
                 Column(
@@ -35,7 +37,9 @@ class _GamesState extends State<Games> {
                         aspectRatio: 4 / 1,
                         child: Card(
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 3.47 * SizeConfig.widthMultiplier,
+                                vertical: 1.80 * SizeConfig.heightMultiplier),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
@@ -72,7 +76,9 @@ class _GamesState extends State<Games> {
                         aspectRatio: 4 / 1,
                         child: Card(
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 3.47 * SizeConfig.widthMultiplier,
+                                vertical: 1.80 * SizeConfig.heightMultiplier),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [

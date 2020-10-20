@@ -34,13 +34,11 @@ class _VideoLecturesState extends State<VideoLectures> {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.symmetric(
+                horizontal: 4.63 * SizeConfig.widthMultiplier,
+                vertical: 2.42 * SizeConfig.heightMultiplier),
             child: Column(
               children: [
-                // Container(
-                //   height: 20.0,
-                //   width: MediaQuery.of(context).size.width,
-                // ),
                 Column(
                   children: [
                     Center(
@@ -49,13 +47,13 @@ class _VideoLecturesState extends State<VideoLectures> {
                         style: AppTheme.title,
                       ),
                     ),
-                    SizedBox(height: 1.5 * SizeConfig.heightMultiplier),
+                    SizedBox(height: 6 * SizeConfig.heightMultiplier),
                     Container(
                       child: Column(
                         children: [
                           Container(
-                            width: 396.0,
-                            height: 209.0,
+                            width: 91.67 * SizeConfig.widthMultiplier,
+                            height: 26.34 * SizeConfig.heightMultiplier,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(5.0),
@@ -84,8 +82,8 @@ class _VideoLecturesState extends State<VideoLectures> {
                           ),
                         ],
                       ),
-                      width: 396.0,
-                      height: 325.0,
+                      width: 91.67 * SizeConfig.widthMultiplier,
+                      height: 39.4 * SizeConfig.heightMultiplier,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
                         color: const Color(0xffffffff),
@@ -98,12 +96,11 @@ class _VideoLecturesState extends State<VideoLectures> {
                         ],
                       ),
                     ),
-                    Container(
-                      height: 25,
-                      width: MediaQuery.of(context).size.width,
-                    ),
+                    SizedBox(height: 6 * SizeConfig.heightMultiplier),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 1.85 * SizeConfig.widthMultiplier,
+                          vertical: 0.97 * SizeConfig.heightMultiplier),
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
@@ -119,11 +116,9 @@ class _VideoLecturesState extends State<VideoLectures> {
                       // margin: EdgeInsets.symmetric(vertical: 20.0),
                       height: 450.0,
                       child: Padding(
-                        padding: EdgeInsets.all(
-                          5.2 /
-                              (SizeConfig.widthMultiplier *
-                                  SizeConfig.heightMultiplier),
-                        ),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 2.31 * SizeConfig.widthMultiplier,
+                            vertical: 1.21 * SizeConfig.heightMultiplier),
                         child: ListView(
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: false,

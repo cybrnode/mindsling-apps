@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mindsling_student/styling.dart';
+import 'package:mindsling_student/size_config.dart';
 
 class Classes extends StatefulWidget {
   @override
@@ -33,7 +34,9 @@ class _ClassesState extends State<Classes> {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.symmetric(
+                horizontal: 4.6 * SizeConfig.widthMultiplier,
+                vertical: 2.42 * SizeConfig.heightMultiplier),
             child: Column(
               children: [
                 Column(
@@ -44,16 +47,15 @@ class _ClassesState extends State<Classes> {
                         style: AppTheme.title,
                       ),
                     ),
-                    Container(
-                      height: 40.0,
-                      width: MediaQuery.of(context).size.width,
-                    ),
+                    SizedBox(height: 2.42 * SizeConfig.heightMultiplier),
                     Container(
                       child: AspectRatio(
                         aspectRatio: 4 / 2,
                         child: Card(
                           child: Padding(
-                            padding: EdgeInsets.all(15.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 3.47 * SizeConfig.widthMultiplier,
+                                vertical: 1.80 * SizeConfig.heightMultiplier),
                             child: Column(
                               // crossAxisAlignment: CrossAxisAlignment.sta,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -117,7 +119,9 @@ class _ClassesState extends State<Classes> {
                         aspectRatio: 4 / 2,
                         child: Card(
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 4.63 * SizeConfig.widthMultiplier,
+                                vertical: 2.42 * SizeConfig.heightMultiplier),
                             child: Column(
                               // crossAxisAlignment: CrossAxisAlignment.sta,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -178,7 +182,9 @@ class _ClassesState extends State<Classes> {
                         aspectRatio: 4 / 2,
                         child: Card(
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 3.47 * SizeConfig.widthMultiplier,
+                                vertical: 1.80 * SizeConfig.heightMultiplier),
                             child: Column(
                               // crossAxisAlignment: CrossAxisAlignment.sta,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -239,7 +245,9 @@ class _ClassesState extends State<Classes> {
                         aspectRatio: 4 / 2,
                         child: Card(
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 3.47 * SizeConfig.widthMultiplier,
+                                vertical: 1.80 * SizeConfig.heightMultiplier),
                             child: Column(
                               // crossAxisAlignment: CrossAxisAlignment.sta,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,

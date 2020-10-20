@@ -33,10 +33,7 @@ class _HomeWorkState extends State<HomeWork> {
       ),
       body: Column(
         children: <Widget>[
-          Container(
-            height: 30.0,
-            width: MediaQuery.of(context).size.width,
-          ),
+          SizedBox(height: 4.62 * SizeConfig.heightMultiplier),
           Column(
             children: [
               FittedBox(
@@ -47,7 +44,8 @@ class _HomeWorkState extends State<HomeWork> {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    vertical: 4.62 * SizeConfig.widthMultiplier),
+                    horizontal: 4.63 * SizeConfig.widthMultiplier,
+                    vertical: 3 * SizeConfig.heightMultiplier),
                 child: Column(
                   children: <Widget>[
                     Card(

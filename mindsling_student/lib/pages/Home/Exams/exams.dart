@@ -16,7 +16,9 @@ class _ExamsState extends State<Exams> {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.symmetric(
+                horizontal: 4.63 * SizeConfig.widthMultiplier,
+                vertical: 2.42 * SizeConfig.heightMultiplier),
             child: Column(
               children: [
                 Column(
@@ -32,10 +34,12 @@ class _ExamsState extends State<Exams> {
                     ),
                     Container(
                       child: AspectRatio(
-                        aspectRatio: 4 / 1,
+                        aspectRatio: 4.5 / 1,
                         child: Card(
                           child: Padding(
-                            padding: const EdgeInsets.all(25.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 5.7 * SizeConfig.widthMultiplier,
+                                vertical: 3 * SizeConfig.heightMultiplier),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
@@ -58,10 +62,12 @@ class _ExamsState extends State<Exams> {
                     ),
                     Container(
                       child: AspectRatio(
-                        aspectRatio: 4 / 1,
+                        aspectRatio: 4.5 / 1,
                         child: Card(
                           child: Padding(
-                            padding: const EdgeInsets.all(25.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 5.7 * SizeConfig.widthMultiplier,
+                                vertical: 3 * SizeConfig.heightMultiplier),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [

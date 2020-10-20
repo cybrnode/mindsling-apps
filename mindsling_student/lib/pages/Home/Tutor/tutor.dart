@@ -19,7 +19,7 @@ class _TutorState extends State<Tutor> {
           color: Colors.black,
         ),
         title: Image.asset(
-          'assets/icons/mind-2.png',
+          'assets/mind-01_3.png',
           fit: BoxFit.fill,
         ),
         centerTitle: true,
@@ -33,7 +33,9 @@ class _TutorState extends State<Tutor> {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.symmetric(
+                horizontal: 4.62 * SizeConfig.widthMultiplier,
+                vertical: 2.42 * SizeConfig.heightMultiplier),
             child: Column(
               children: [
                 Column(
@@ -61,7 +63,10 @@ class _TutorState extends State<Tutor> {
                             children: [
                               Row(
                                 children: [
-                                  Text('Parent Teaching Meeting'),
+                                  Text(
+                                    'English Class (22 Students)',
+                                    style: AppTheme.headerText2,
+                                  ),
                                   Spacer(),
                                   Text(
                                     '23-07-2020',

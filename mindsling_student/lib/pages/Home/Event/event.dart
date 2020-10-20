@@ -45,16 +45,18 @@ class _EventsState extends State<Events> {
                 // ),
                 Column(
                   children: [
-                    SizedBox(height: 30),
+                    SizedBox(height: 3.64 * SizeConfig.heightMultiplier),
                     Center(
                       child: Text(
                         'Event',
                         style: AppTheme.title,
                       ),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 3.64 * SizeConfig.heightMultiplier),
                     Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 1.85 * SizeConfig.widthMultiplier,
+                          vertical: 0.97 * SizeConfig.heightMultiplier),
                       child: Container(
                         child: ButtonBar(
                           mainAxisSize: MainAxisSize.min,
@@ -111,11 +113,14 @@ class _EventsState extends State<Events> {
                         ),
                       ),
                     ),
+                    SizedBox(height: 4 * SizeConfig.heightMultiplier),
                     Column(
                       children: [
                         Container(
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 3.47 * SizeConfig.widthMultiplier,
+                                vertical: 1.82 * SizeConfig.heightMultiplier),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               // mainAxisSize: MainAxisSize.min,
@@ -168,7 +173,12 @@ class _EventsState extends State<Events> {
                                         Flexible(
                                           flex: 2,
                                           child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 1.85 *
+                                                    SizeConfig.widthMultiplier,
+                                                vertical: 0.97 *
+                                                    SizeConfig
+                                                        .heightMultiplier),
                                             child: Align(
                                               alignment: Alignment.bottomLeft,
                                               child: Text(
@@ -205,7 +215,9 @@ class _EventsState extends State<Events> {
                         SizedBox(height: 30),
                         Container(
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 3.47 * SizeConfig.widthMultiplier,
+                                vertical: 1.82 * SizeConfig.heightMultiplier),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               // mainAxisSize: MainAxisSize.min,
@@ -258,7 +270,12 @@ class _EventsState extends State<Events> {
                                         Flexible(
                                           flex: 2,
                                           child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 1.85 *
+                                                    SizeConfig.widthMultiplier,
+                                                vertical: 0.97 *
+                                                    SizeConfig
+                                                        .heightMultiplier),
                                             child: Align(
                                               alignment: Alignment.bottomLeft,
                                               child: Text(
@@ -295,7 +312,9 @@ class _EventsState extends State<Events> {
                         SizedBox(height: 30),
                         Container(
                           child: Padding(
-                            padding: const EdgeInsets.all(15.0),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 3.47 * SizeConfig.widthMultiplier,
+                                vertical: 1.82 * SizeConfig.heightMultiplier),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               // mainAxisSize: MainAxisSize.min,
@@ -348,7 +367,12 @@ class _EventsState extends State<Events> {
                                         Flexible(
                                           flex: 2,
                                           child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 1.85 *
+                                                    SizeConfig.widthMultiplier,
+                                                vertical: 0.97 *
+                                                    SizeConfig
+                                                        .heightMultiplier),
                                             child: Align(
                                               alignment: Alignment.bottomLeft,
                                               child: Text(
@@ -386,6 +410,7 @@ class _EventsState extends State<Events> {
                     ),
                   ],
                 ),
+                SizedBox(height: 4 * SizeConfig.heightMultiplier),
               ],
             ),
           ),

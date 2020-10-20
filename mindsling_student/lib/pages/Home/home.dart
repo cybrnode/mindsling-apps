@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/size_config.dart';
 import 'package:mindsling_student/styling.dart';
 
 class Home extends StatefulWidget {
@@ -43,7 +44,10 @@ class _HomeState extends State<Home> {
                 ],
               ),
               Padding(
-                padding: new EdgeInsets.only(top: 180, right: 20.0, left: 20.0),
+                padding: new EdgeInsets.only(
+                    top: 21.84 * SizeConfig.heightMultiplier,
+                    right: 4.62 * SizeConfig.widthMultiplier,
+                    left: 4.62 * SizeConfig.widthMultiplier),
                 child: Container(
                   decoration: BoxDecoration(
                     boxShadow: [
@@ -93,7 +97,10 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Padding(
-                padding: new EdgeInsets.only(top: 180, right: 20.0, left: 20.0),
+                padding: new EdgeInsets.only(
+                    top: 21.84 * SizeConfig.heightMultiplier,
+                    right: 4.62 * SizeConfig.widthMultiplier,
+                    left: 4.62 * SizeConfig.widthMultiplier),
                 child: FractionalTranslation(
                   translation: Offset(0.0, -0.4),
                   child: Align(
@@ -122,15 +129,19 @@ class _HomeState extends State<Home> {
           Expanded(
             child: GridView.count(
               primary: false,
-              padding: const EdgeInsets.all(25),
+              padding: EdgeInsets.symmetric(
+                  horizontal: 5.78 * SizeConfig.widthMultiplier,
+                  vertical: 3.03 * SizeConfig.heightMultiplier),
               childAspectRatio: (24 / 18),
-              crossAxisSpacing: 40,
-              mainAxisSpacing: 40,
+              crossAxisSpacing: 4.85 * SizeConfig.heightMultiplier,
+              mainAxisSpacing: 9.25 * SizeConfig.widthMultiplier,
               crossAxisCount: 2,
               children: <Widget>[
                 InkResponse(
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    // padding: EdgeInsets.symmetric(
+                    //     horizontal: 1.85 * SizeConfig.widthMultiplier,
+                    //     vertical: 0.97 * SizeConfig.heightMultiplier),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -174,7 +185,7 @@ class _HomeState extends State<Home> {
                 ),
                 InkResponse(
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    // padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -217,7 +228,7 @@ class _HomeState extends State<Home> {
                 ),
                 InkResponse(
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    // padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -259,7 +270,7 @@ class _HomeState extends State<Home> {
                 ),
                 InkResponse(
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    // padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -298,7 +309,7 @@ class _HomeState extends State<Home> {
                 ),
                 InkResponse(
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    // padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -338,7 +349,7 @@ class _HomeState extends State<Home> {
                 ),
                 InkResponse(
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    // padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -378,7 +389,7 @@ class _HomeState extends State<Home> {
                 ),
                 InkResponse(
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    // padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -419,7 +430,7 @@ class _HomeState extends State<Home> {
                 ),
                 InkResponse(
                   child: Container(
-                    padding: const EdgeInsets.all(8),
+                    // padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
