@@ -43,27 +43,37 @@ class _GamesState extends State<Games> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Cricket',
-                                      style: AppTheme.headerText,
-                                    ),
-                                    Text('6 Tue, 12:00PM',
-                                        style: AppTheme.subText),
-                                  ],
+                                Flexible(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      FittedBox(
+                                        child: Text(
+                                          'Cricket',
+                                          style: AppTheme.headerText,
+                                        ),
+                                      ),
+                                      FittedBox(
+                                        child: Text('6 Tue, 12:00PM',
+                                            style: AppTheme.subText),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Team A',
-                                      style: AppTheme.rowText,
-                                    ),
-                                  ],
+                                Flexible(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      FittedBox(
+                                        child: Text(
+                                          "Team A",
+                                          style: AppTheme.rowText,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
@@ -82,27 +92,37 @@ class _GamesState extends State<Games> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Cricket',
-                                      style: AppTheme.headerText,
-                                    ),
-                                    Text('6 Tue, 12:00PM',
-                                        style: AppTheme.subText),
-                                  ],
+                                Flexible(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      FittedBox(
+                                        child: Text(
+                                          'Cricket',
+                                          style: AppTheme.headerText,
+                                        ),
+                                      ),
+                                      FittedBox(
+                                        child: Text('6 Tue, 12:00PM',
+                                            style: AppTheme.subText),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Team B',
-                                      style: AppTheme.rowText,
-                                    ),
-                                  ],
+                                Flexible(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      FittedBox(
+                                        child: Text(
+                                          'Team B',
+                                          style: AppTheme.rowText,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),

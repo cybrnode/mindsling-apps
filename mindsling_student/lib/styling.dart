@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mindsling_student/pages/notifications.dart';
 import 'package:mindsling_student/size_config.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,6 +6,7 @@ abstract class AppTheme {
   AppTheme._();
 
   static const Color appBackgroundColor = Color(0xFF26A69A);
+  static const Color secondaryColor = Color(0xffa9b9c5);
   static const Color iconBGColor = Color(0xFFB2DFDB);
   static const Color iconColor = Color(0xFF26A69A);
   static const Color buttonColor = Color(0xFF26A69A);
@@ -68,9 +68,14 @@ abstract class AppTheme {
     fontWeight: FontWeight.w600,
   );
   static final TextStyle headerText2 = TextStyle(
-    fontSize: 1.94 * SizeConfig.textMultiplier,
+    fontSize: 3 * SizeConfig.textMultiplier,
     color: const Color(0xff000000),
     fontWeight: FontWeight.w700,
+  );
+  static final TextStyle vidHeaderText = TextStyle(
+    fontSize: 2.4 * SizeConfig.textMultiplier,
+    color: const Color(0xff000000),
+    fontWeight: FontWeight.w500,
   );
   static final TextStyle rowText = TextStyle(
     fontSize: 1.94 * SizeConfig.textMultiplier,
@@ -109,5 +114,28 @@ abstract class AppTheme {
     fontSize: 1.93 * SizeConfig.textMultiplier,
     color: const Color(0xff000000),
     height: 1.25,
+  );
+
+  static final TextStyle bottomNavText = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 1.93 * SizeConfig.textMultiplier,
+  );
+
+  static final TextStyle notifSubText = TextStyle(
+    fontSize: 1.5 * SizeConfig.textMultiplier,
+    color: subTextColor,
+  );
+  static final TextStyle shortNotifSubText = TextStyle(
+    fontSize: 1.3 * SizeConfig.textMultiplier,
+    color: subTextColor,
+  );
+  static final TextStyle eventTitle = TextStyle(
+    fontSize: 2.4 * SizeConfig.textMultiplier,
+    color: Colors.white,
+  );
+  static final TextStyle eventText = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 1.5 * SizeConfig.textMultiplier,
+    color: Colors.white,
   );
 }

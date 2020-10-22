@@ -114,51 +114,47 @@ class _EventsState extends State<Events> {
                       ),
                     ),
                     SizedBox(height: 4 * SizeConfig.heightMultiplier),
-                    Column(
-                      children: [
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 3.47 * SizeConfig.widthMultiplier,
-                                vertical: 1.82 * SizeConfig.heightMultiplier),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              // mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Flexible(
-                                  flex: 3,
-                                  child: Align(
-                                    alignment: Alignment.topLeft,
-                                    child: Text(
-                                      'School dance',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 19,
-                                        color: const Color(0xfff9f9f9),
-                                        height: 1.9473684210526316,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 2.5 * SizeConfig.widthMultiplier,
+                          vertical: 1.2 * SizeConfig.heightMultiplier),
+                      child: Column(
+                        children: [
+                          Container(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 5 * SizeConfig.widthMultiplier,
+                                  vertical: 1.82 * SizeConfig.heightMultiplier),
+                              child: Column(
+                                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                // mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Align(
+                                        alignment: Alignment.topLeft,
+                                        child: FittedBox(
+                                          child: Text(
+                                            'School dance',
+                                            style: AppTheme.eventTitle,
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                    ],
                                   ),
-                                ),
-                                Flexible(
-                                  flex: 3,
-                                  child: SizedBox(
-                                    width: 365.0,
-                                    height: 64.0,
+                                  SizedBox(
+                                    height: 1 * SizeConfig.heightMultiplier,
+                                  ),
+                                  Expanded(
+                                    // mainAxisAlignment:
+                                    //     MainAxisAlignment.spaceBetween,
                                     child: Text(
                                       'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.',
-                                      style: TextStyle(
-                                        fontFamily: 'Segoe UI',
-                                        fontSize: 14,
-                                        color: const Color(0xffffffff),
-                                      ),
-                                      textAlign: TextAlign.left,
+                                      style: AppTheme.eventText,
                                     ),
+                                    // Spacer(),
                                   ),
-                                ),
-                                Flexible(
-                                  flex: 2,
-                                  child: Container(
+                                  Container(
                                     child: Row(
                                       // mainAxisAlignment: MainAxisAlignment.start,
                                       // mainAxisSize: MainAxisSize.min,
@@ -171,7 +167,7 @@ class _EventsState extends State<Events> {
                                           ),
                                         ),
                                         Flexible(
-                                          flex: 2,
+                                          flex: 4,
                                           child: Padding(
                                             padding: EdgeInsets.symmetric(
                                                 horizontal: 1.85 *
@@ -193,69 +189,60 @@ class _EventsState extends State<Events> {
                                       ],
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
+                            ),
+                            width: 375.0,
+                            height: 165.0,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(11.0),
+                              gradient: LinearGradient(
+                                begin: Alignment(0.0, -1.0),
+                                end: Alignment(0.0, 1.0),
+                                colors: [
+                                  const Color(0x5c000000),
+                                  const Color(0xff000000)
+                                ],
+                                stops: [0.0, 1.0],
+                              ),
                             ),
                           ),
-                          width: 375.0,
-                          height: 165.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(11.0),
-                            gradient: LinearGradient(
-                              begin: Alignment(0.0, -1.0),
-                              end: Alignment(0.0, 1.0),
-                              colors: [
-                                const Color(0x5c000000),
-                                const Color(0xff000000)
-                              ],
-                              stops: [0.0, 1.0],
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 30),
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 3.47 * SizeConfig.widthMultiplier,
-                                vertical: 1.82 * SizeConfig.heightMultiplier),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              // mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Flexible(
-                                  flex: 3,
-                                  child: Align(
-                                    alignment: Alignment.topLeft,
-                                    child: Text(
-                                      'School dance',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 19,
-                                        color: const Color(0xfff9f9f9),
-                                        height: 1.9473684210526316,
+                          SizedBox(height: 30),
+                          Container(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 5 * SizeConfig.widthMultiplier,
+                                  vertical: 1.82 * SizeConfig.heightMultiplier),
+                              child: Column(
+                                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                // mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Align(
+                                        alignment: Alignment.topLeft,
+                                        child: FittedBox(
+                                          child: Text(
+                                            'School dance',
+                                            style: AppTheme.eventTitle,
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                    ],
                                   ),
-                                ),
-                                Flexible(
-                                  flex: 3,
-                                  child: SizedBox(
-                                    width: 365.0,
-                                    height: 64.0,
+                                  SizedBox(
+                                    height: 1 * SizeConfig.heightMultiplier,
+                                  ),
+                                  Expanded(
+                                    // mainAxisAlignment:
+                                    //     MainAxisAlignment.spaceBetween,
                                     child: Text(
                                       'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.',
-                                      style: TextStyle(
-                                        fontFamily: 'Segoe UI',
-                                        fontSize: 14,
-                                        color: const Color(0xffffffff),
-                                      ),
-                                      textAlign: TextAlign.left,
+                                      style: AppTheme.eventText,
                                     ),
+                                    // Spacer(),
                                   ),
-                                ),
-                                Flexible(
-                                  flex: 2,
-                                  child: Container(
+                                  Container(
                                     child: Row(
                                       // mainAxisAlignment: MainAxisAlignment.start,
                                       // mainAxisSize: MainAxisSize.min,
@@ -268,7 +255,7 @@ class _EventsState extends State<Events> {
                                           ),
                                         ),
                                         Flexible(
-                                          flex: 2,
+                                          flex: 4,
                                           child: Padding(
                                             padding: EdgeInsets.symmetric(
                                                 horizontal: 1.85 *
@@ -290,69 +277,60 @@ class _EventsState extends State<Events> {
                                       ],
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
+                            ),
+                            width: 375.0,
+                            height: 165.0,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(11.0),
+                              gradient: LinearGradient(
+                                begin: Alignment(0.0, -1.0),
+                                end: Alignment(0.0, 1.0),
+                                colors: [
+                                  const Color(0x5c000000),
+                                  const Color(0xff000000)
+                                ],
+                                stops: [0.0, 1.0],
+                              ),
                             ),
                           ),
-                          width: 375.0,
-                          height: 165.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(11.0),
-                            gradient: LinearGradient(
-                              begin: Alignment(0.0, -1.0),
-                              end: Alignment(0.0, 1.0),
-                              colors: [
-                                const Color(0x5c000000),
-                                const Color(0xff000000)
-                              ],
-                              stops: [0.0, 1.0],
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 30),
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 3.47 * SizeConfig.widthMultiplier,
-                                vertical: 1.82 * SizeConfig.heightMultiplier),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              // mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Flexible(
-                                  flex: 3,
-                                  child: Align(
-                                    alignment: Alignment.topLeft,
-                                    child: Text(
-                                      'School dance',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 19,
-                                        color: const Color(0xfff9f9f9),
-                                        height: 1.9473684210526316,
+                          SizedBox(height: 30),
+                          Container(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 5 * SizeConfig.widthMultiplier,
+                                  vertical: 1.82 * SizeConfig.heightMultiplier),
+                              child: Column(
+                                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                // mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Align(
+                                        alignment: Alignment.topLeft,
+                                        child: FittedBox(
+                                          child: Text(
+                                            'School dance',
+                                            style: AppTheme.eventTitle,
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                    ],
                                   ),
-                                ),
-                                Flexible(
-                                  flex: 3,
-                                  child: SizedBox(
-                                    width: 365.0,
-                                    height: 64.0,
+                                  SizedBox(
+                                    height: 1 * SizeConfig.heightMultiplier,
+                                  ),
+                                  Expanded(
+                                    // mainAxisAlignment:
+                                    //     MainAxisAlignment.spaceBetween,
                                     child: Text(
                                       'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.',
-                                      style: TextStyle(
-                                        fontFamily: 'Segoe UI',
-                                        fontSize: 14,
-                                        color: const Color(0xffffffff),
-                                      ),
-                                      textAlign: TextAlign.left,
+                                      style: AppTheme.eventText,
                                     ),
+                                    // Spacer(),
                                   ),
-                                ),
-                                Flexible(
-                                  flex: 2,
-                                  child: Container(
+                                  Container(
                                     child: Row(
                                       // mainAxisAlignment: MainAxisAlignment.start,
                                       // mainAxisSize: MainAxisSize.min,
@@ -365,7 +343,7 @@ class _EventsState extends State<Events> {
                                           ),
                                         ),
                                         Flexible(
-                                          flex: 2,
+                                          flex: 4,
                                           child: Padding(
                                             padding: EdgeInsets.symmetric(
                                                 horizontal: 1.85 *
@@ -387,26 +365,26 @@ class _EventsState extends State<Events> {
                                       ],
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
+                            ),
+                            width: 375.0,
+                            height: 165.0,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(11.0),
+                              gradient: LinearGradient(
+                                begin: Alignment(0.0, -1.0),
+                                end: Alignment(0.0, 1.0),
+                                colors: [
+                                  const Color(0x5c000000),
+                                  const Color(0xff000000)
+                                ],
+                                stops: [0.0, 1.0],
+                              ),
                             ),
                           ),
-                          width: 375.0,
-                          height: 165.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(11.0),
-                            gradient: LinearGradient(
-                              begin: Alignment(0.0, -1.0),
-                              end: Alignment(0.0, 1.0),
-                              colors: [
-                                const Color(0x5c000000),
-                                const Color(0xff000000)
-                              ],
-                              stops: [0.0, 1.0],
-                            ),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),

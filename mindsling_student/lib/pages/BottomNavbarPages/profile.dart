@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/size_config.dart';
+import 'package:mindsling_student/styling.dart';
 
 class UpdateProfile extends StatefulWidget {
   @override
@@ -41,8 +43,10 @@ class _UpdateProfileState extends State<UpdateProfile> {
                   ],
                 ),
                 Padding(
-                  padding:
-                      new EdgeInsets.only(top: 180, right: 20.0, left: 20.0),
+                  padding: new EdgeInsets.only(
+                      top: 21.84 * SizeConfig.heightMultiplier,
+                      right: 4.62 * SizeConfig.widthMultiplier,
+                      left: 4.62 * SizeConfig.widthMultiplier),
                   child: Container(
                     decoration: BoxDecoration(
                       boxShadow: [
@@ -71,9 +75,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                                     flex: 2,
                                     child: Text(
                                       'John Doe',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 25),
+                                      style: AppTheme.homeCardText,
                                     ),
                                   ),
                                   Spacer(),
@@ -81,9 +83,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                                     flex: 4,
                                     child: Text(
                                       'Class 8th, B',
-                                      style: TextStyle(
-                                          color: Colors.grey[300],
-                                          fontSize: 25),
+                                      style: AppTheme.homeCardsubText,
                                     ),
                                   ),
                                 ],
@@ -96,8 +96,10 @@ class _UpdateProfileState extends State<UpdateProfile> {
                   ),
                 ),
                 Padding(
-                  padding:
-                      new EdgeInsets.only(top: 180, right: 20.0, left: 20.0),
+                  padding: new EdgeInsets.only(
+                      top: 21.84 * SizeConfig.heightMultiplier,
+                      right: 4.62 * SizeConfig.widthMultiplier,
+                      left: 4.62 * SizeConfig.widthMultiplier),
                   child: FractionalTranslation(
                     translation: Offset(0.0, -0.4),
                     child: Align(
@@ -128,7 +130,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(height: 10),
+                  SizedBox(height: 1 * SizeConfig.heightMultiplier),
                   Container(
                     child: TextField(
                       decoration: InputDecoration(
@@ -143,7 +145,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 1 * SizeConfig.heightMultiplier),
                   Container(
                     child: TextField(
                       decoration: InputDecoration(
@@ -158,7 +160,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 1 * SizeConfig.heightMultiplier),
                   Container(
                     child: TextField(
                       decoration: InputDecoration(
@@ -173,7 +175,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 1 * SizeConfig.heightMultiplier),
                   Container(
                     child: TextField(
                       decoration: InputDecoration(
@@ -188,7 +190,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 3 * SizeConfig.heightMultiplier),
                   Container(
                     child: ButtonTheme(
                       minWidth: 280.0,

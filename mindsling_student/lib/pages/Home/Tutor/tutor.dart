@@ -51,8 +51,8 @@ class _TutorState extends State<Tutor> {
                       width: MediaQuery.of(context).size.width,
                     ),
                     Container(
-                      width: 387.0,
-                      height: 250.0,
+                      width: 100 * SizeConfig.widthMultiplier,
+                      height: 35 * SizeConfig.heightMultiplier,
                       child: Card(
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
@@ -63,79 +63,98 @@ class _TutorState extends State<Tutor> {
                             children: [
                               Row(
                                 children: [
-                                  Text(
-                                    'English Class (22 Students)',
-                                    style: AppTheme.headerText2,
+                                  Flexible(
+                                    flex: 4,
+                                    child: FittedBox(
+                                      child: Text(
+                                        'English Class (22 Students)',
+                                        style: AppTheme.headerText2,
+                                      ),
+                                    ),
                                   ),
                                   Spacer(),
-                                  Text(
-                                    '23-07-2020',
-                                    style: TextStyle(color: Colors.grey[400]),
+                                  Flexible(
+                                    flex: 2,
+                                    child: FittedBox(
+                                      child: Text(
+                                        '23-07-2020',
+                                        style: AppTheme.subText,
+                                      ),
+                                    ),
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 20),
-                              Row(
-                                // mainAxisAlignment:
-                                //     MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    '1 hour class',
-                                    style: TextStyle(color: Colors.grey[400]),
-                                  ),
-                                  // Spacer(),
-                                ],
-                              ),
-                              SizedBox(height: 10),
-                              Row(
-                                // mainAxisAlignment:
-                                //     MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    "\$20/class",
-                                    style: TextStyle(color: Colors.grey[400]),
-                                  ),
-                                  // Spacer(),
-                                ],
-                              ),
-                              SizedBox(height: 10),
-                              Row(
-                                // mainAxisAlignment:
-                                //     MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'daily at 8:00 am',
-                                    style: TextStyle(color: Colors.grey[400]),
-                                  ),
-                                  // Spacer(),
-                                ],
-                              ),
-                              SizedBox(height: 30),
-                              Align(
-                                alignment: Alignment.bottomCenter,
+                              SizedBox(height: 1 * SizeConfig.heightMultiplier),
+                              Flexible(
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  // mainAxisAlignment:
+                                  //     MainAxisAlignment.spaceBetween,
                                   children: [
-                                    ButtonTheme(
-                                      minWidth: 280.0,
-                                      height: 47.0,
-                                      child: RaisedButton(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(18.0),
-                                        ),
-                                        onPressed: () {},
-                                        color: Colors.teal[400],
-                                        child: Text(
-                                          'Accept',
-                                          style: TextStyle(color: Colors.white),
-                                        ),
+                                    FittedBox(
+                                      child: Text(
+                                        '1 hour class',
+                                        style: AppTheme.subText,
                                       ),
                                     ),
                                     // Spacer(),
                                   ],
                                 ),
                               ),
+                              SizedBox(height: 1 * SizeConfig.heightMultiplier),
+                              Flexible(
+                                child: Row(
+                                  // mainAxisAlignment:
+                                  //     MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    FittedBox(
+                                      child: Text(
+                                        "\$20/class",
+                                        style: AppTheme.subText,
+                                      ),
+                                    ),
+                                    // Spacer(),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 1 * SizeConfig.heightMultiplier),
+                              Flexible(
+                                child: Row(
+                                  // mainAxisAlignment:
+                                  //     MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    FittedBox(
+                                      child: Text(
+                                        'daily at 8:00 am',
+                                        style: AppTheme.subText,
+                                      ),
+                                    ),
+                                    // Spacer(),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 4 * SizeConfig.heightMultiplier),
+                              Expanded(
+                                child: Center(
+                                  child: ButtonTheme(
+                                    minWidth: 70 * SizeConfig.widthMultiplier,
+                                    height: 100 * SizeConfig.heightMultiplier,
+                                    child: RaisedButton(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(18.0),
+                                      ),
+                                      onPressed: () {},
+                                      color: Colors.teal[400],
+                                      child: Center(
+                                        child: Text(
+                                          'Accept',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ), // Spacer(),
                             ],
                           ),
                         ),

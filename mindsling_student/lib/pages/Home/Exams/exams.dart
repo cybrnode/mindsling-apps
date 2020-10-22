@@ -43,16 +43,22 @@ class _ExamsState extends State<Exams> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text('English', style: AppTheme.headerText),
-                                    Text(
-                                      '6 Tue, 12:00PM',
-                                      style: AppTheme.subText,
-                                    ),
-                                  ],
+                                Flexible(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      FittedBox(
+                                          child: Text('English',
+                                              style: AppTheme.headerText)),
+                                      FittedBox(
+                                        child: Text(
+                                          '6 Tue, 12:00PM',
+                                          style: AppTheme.subText,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
@@ -71,14 +77,20 @@ class _ExamsState extends State<Exams> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text('Math', style: AppTheme.headerText),
-                                    Text('6 Tue, 12:00PM',
-                                        style: AppTheme.subText),
-                                  ],
+                                Flexible(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      FittedBox(
+                                          child: Text('Math',
+                                              style: AppTheme.headerText)),
+                                      FittedBox(
+                                        child: Text('6 Tue, 12:00PM',
+                                            style: AppTheme.subText),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),

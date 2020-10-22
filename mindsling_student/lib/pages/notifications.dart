@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/size_config.dart';
+import 'package:mindsling_student/styling.dart';
 
 class Notifications extends StatefulWidget {
   @override
@@ -34,23 +36,19 @@ class _NotificationsState extends State<Notifications> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                SizedBox(height: 20.0),
+                SizedBox(height: 2 * SizeConfig.heightMultiplier),
                 Column(
                   children: [
                     Center(
                       child: Text(
                         'Notifications',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontSize: 19,
-                          color: const Color(0xff000000),
-                          fontWeight: FontWeight.w500,
-                        ),
+                        style: AppTheme.title,
                       ),
                     ),
+                    SizedBox(height: 2 * SizeConfig.heightMultiplier),
                     Container(
-                      width: 387.0,
-                      height: 65.0,
+                      width: 100.0 * SizeConfig.widthMultiplier,
+                      height: 9.0 * SizeConfig.heightMultiplier,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.0),
                         color: const Color(0xffffffff),
@@ -72,18 +70,22 @@ class _NotificationsState extends State<Notifications> {
                             children: [
                               Row(
                                 children: [
-                                  Text(
-                                    'Video Lecture',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: const Color(0xff000000),
-                                      fontWeight: FontWeight.w700,
+                                  Flexible(
+                                    child: FittedBox(
+                                      child: Text(
+                                        'Video Lecture',
+                                        style: AppTheme.headerText2,
+                                      ),
                                     ),
                                   ),
-                                  Spacer(),
-                                  Text(
-                                    '23-07-2020',
-                                    style: TextStyle(color: Colors.grey[400]),
+                                  Spacer(
+                                    flex: 2,
+                                  ),
+                                  FittedBox(
+                                    child: Text(
+                                      '23-07-2020',
+                                      style: AppTheme.notifSubText,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -92,13 +94,11 @@ class _NotificationsState extends State<Notifications> {
                                 children: [
                                   // Spacer(),
                                   Flexible(
-                                    flex: 2,
-                                    child: Text(
-                                      'You received a video lecture from teacher',
-                                      style: TextStyle(
-                                          color: const Color(0xffacacac),
-                                          fontSize: 12),
-                                      textAlign: TextAlign.left,
+                                    child: FittedBox(
+                                      child: Text(
+                                        'You received a video lecture from teacher',
+                                        style: AppTheme.notifSubText,
+                                      ),
                                     ),
                                   ),
                                   // Spacer(),

@@ -5,6 +5,8 @@ import 'package:mindsling_student/pages/BottomNavbarPages/create_post.dart';
 import 'package:mindsling_student/pages/BottomNavbarPages/profile.dart';
 import 'package:mindsling_student/pages/Home/Classmates/classmates.dart';
 import 'package:mindsling_student/pages/Home/home.dart';
+import 'package:mindsling_student/size_config.dart';
+import 'package:mindsling_student/styling.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -40,6 +42,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'More',
           ),
         ],
+        selectedFontSize: 1.5 * SizeConfig.textMultiplier,
+        unselectedFontSize: 1.5 * SizeConfig.textMultiplier,
         selectedItemColor: Colors.teal[400],
         onTap: _onItemTapped,
         currentIndex: _selectedIndex,

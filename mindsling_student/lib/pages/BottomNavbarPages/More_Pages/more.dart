@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mindsling_student/styling.dart';
+import 'package:mindsling_student/size_config.dart';
 
 class MorePages extends StatefulWidget {
   @override
@@ -38,14 +39,16 @@ class _MorePagesState extends State<MorePages> {
               style: AppTheme.title,
             ),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 3 * SizeConfig.heightMultiplier),
           Expanded(
             child: GridView.count(
               primary: false,
-              padding: const EdgeInsets.all(25),
-              childAspectRatio: (29 / 20),
-              crossAxisSpacing: 40,
-              mainAxisSpacing: 40,
+              padding: EdgeInsets.symmetric(
+                  horizontal: 5.78 * SizeConfig.widthMultiplier,
+                  vertical: 3.03 * SizeConfig.heightMultiplier),
+              childAspectRatio: (24 / 18),
+              crossAxisSpacing: 4.85 * SizeConfig.heightMultiplier,
+              mainAxisSpacing: 9.25 * SizeConfig.widthMultiplier,
               crossAxisCount: 2,
               children: <Widget>[
                 InkResponse(
@@ -70,23 +73,25 @@ class _MorePagesState extends State<MorePages> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              // backgroundImage: AssetImage(
-                              //   'assets/greyhome-05.png',
-                              // ),
-                              child: Icon(
-                                Icons.settings,
-                                color: AppTheme.iconColor,
+                        Flexible(
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                radius: 30,
+                                // backgroundImage: AssetImage(
+                                //   'assets/greyhome-05.png',
+                                // ),
+                                child: Icon(
+                                  Icons.settings,
+                                  color: AppTheme.iconColor,
+                                ),
+                                backgroundColor: AppTheme.iconBGColor,
+                                // backgroundColor: Colors.teal[100],
                               ),
-                              backgroundColor: AppTheme.iconBGColor,
-                              // backgroundColor: Colors.teal[100],
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        Text("Settings"),
+                        FittedBox(child: Text("Settings")),
                       ],
                     ),
                     // color: Colors.teal[100],
@@ -117,20 +122,22 @@ class _MorePagesState extends State<MorePages> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              child: Icon(
-                                FontAwesomeIcons.exclamationCircle,
-                                color: AppTheme.iconColor,
+                        Flexible(
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                radius: 30,
+                                child: Icon(
+                                  FontAwesomeIcons.exclamationCircle,
+                                  color: AppTheme.iconColor,
+                                ),
+                                backgroundColor: AppTheme.iconBGColor,
+                                // backgroundColor: Colors.teal[100],
                               ),
-                              backgroundColor: AppTheme.iconBGColor,
-                              // backgroundColor: Colors.teal[100],
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        Text("About App"),
+                        FittedBox(child: Text("About App")),
                       ],
                     ), // color: Colors.teal[200],
                   ),
@@ -160,23 +167,25 @@ class _MorePagesState extends State<MorePages> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              // backgroundImage: AssetImage(
-                              //   'assets/greyhome-05.png',
-                              // ),
-                              child: Icon(
-                                FontAwesomeIcons.file,
-                                color: AppTheme.iconColor,
+                        Flexible(
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                radius: 30,
+                                // backgroundImage: AssetImage(
+                                //   'assets/greyhome-05.png',
+                                // ),
+                                child: Icon(
+                                  FontAwesomeIcons.file,
+                                  color: AppTheme.iconColor,
+                                ),
+                                backgroundColor: AppTheme.iconBGColor,
+                                // backgroundColor: Colors.teal[100],
                               ),
-                              backgroundColor: AppTheme.iconBGColor,
-                              // backgroundColor: Colors.teal[100],
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        Text("Privacy Policy"),
+                        FittedBox(child: Text("Privacy Policy")),
                       ],
                     ),
                   ),
@@ -206,23 +215,25 @@ class _MorePagesState extends State<MorePages> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              // backgroundImage: AssetImage(
-                              //   'assets/greyhome-05.png',
-                              // ),
-                              child: Icon(
-                                FontAwesomeIcons.file,
-                                color: AppTheme.iconColor,
+                        Flexible(
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                radius: 30,
+                                // backgroundImage: AssetImage(
+                                //   'assets/greyhome-05.png',
+                                // ),
+                                child: Icon(
+                                  FontAwesomeIcons.file,
+                                  color: AppTheme.iconColor,
+                                ),
+                                backgroundColor: AppTheme.iconBGColor,
+                                // backgroundColor: Colors.teal[100],
                               ),
-                              backgroundColor: AppTheme.iconBGColor,
-                              // backgroundColor: Colors.teal[100],
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        Text("Terms & Conditions"),
+                        FittedBox(child: Text("Terms & Conditions")),
                       ],
                     ),
                     // color: Colors.teal[200],
@@ -253,23 +264,25 @@ class _MorePagesState extends State<MorePages> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              // backgroundImage: AssetImage(
-                              //   'assets/greyhome-05.png',
-                              // ),
-                              child: Icon(
-                                FontAwesomeIcons.video,
-                                color: AppTheme.iconColor,
+                        Flexible(
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                radius: 30,
+                                // backgroundImage: AssetImage(
+                                //   'assets/greyhome-05.png',
+                                // ),
+                                child: Icon(
+                                  FontAwesomeIcons.video,
+                                  color: AppTheme.iconColor,
+                                ),
+                                backgroundColor: AppTheme.iconBGColor,
+                                // backgroundColor: Colors.teal[100],
                               ),
-                              backgroundColor: AppTheme.iconBGColor,
-                              // backgroundColor: Colors.teal[100],
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        Text("Live Sessions"),
+                        FittedBox(child: Text("Live Sessions")),
                       ],
                     ),
                   ),
@@ -299,23 +312,25 @@ class _MorePagesState extends State<MorePages> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              // backgroundImage: AssetImage(
-                              //   'assets/greyhome-05.png',
-                              // ),
-                              child: Icon(
-                                FontAwesomeIcons.signOutAlt,
-                                color: AppTheme.iconColor,
+                        Flexible(
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                radius: 30,
+                                // backgroundImage: AssetImage(
+                                //   'assets/greyhome-05.png',
+                                // ),
+                                child: Icon(
+                                  FontAwesomeIcons.signOutAlt,
+                                  color: AppTheme.iconColor,
+                                ),
+                                backgroundColor: AppTheme.iconBGColor,
+                                // backgroundColor: Colors.teal[100],
                               ),
-                              backgroundColor: AppTheme.iconBGColor,
-                              // backgroundColor: Colors.teal[100],
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        Text("Logout"),
+                        FittedBox(child: Text("Logout")),
                       ],
                     ),
                     // color: Colors.teal[200],

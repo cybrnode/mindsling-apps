@@ -103,6 +103,48 @@ class _ClassMatesState extends State<ClassMates> {
                         ),
                         Container(
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage('assets/logo.jpg'),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                'Gulf',
+                                style: TextStyle(
+                                  fontSize: 11,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage('assets/logo.jpg'),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                'Gulf',
+                                style: TextStyle(
+                                  fontSize: 11,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Row(
@@ -166,286 +208,144 @@ class _ClassMatesState extends State<ClassMates> {
             SizedBox(
               height: 20,
             ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/logo.jpg'),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          'Gulf Doe',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: const Color(0xff000000),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            'Hi! How are you?',
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: const Color(0xffa9b9c5),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Flexible(
+                        child: Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage('assets/logo.jpg'),
                             ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        '6 Tue, 3:45 pm',
-                        style: TextStyle(
-                          fontSize: 9,
-                          fontWeight: FontWeight.w300,
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Column(
+                              children: [
+                                Flexible(
+                                  child: Row(
+                                    children: [
+                                      FittedBox(
+                                        child: Text(
+                                          'Gulf Doe',
+                                          style: TextStyle(
+                                            fontSize: 13,
+                                            color: const Color(0xff000000),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    'Hi! How are you?',
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: const Color(0xffa9b9c5),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Spacer(),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                '6 Tue, 3:45 pm',
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  ],
-                ),
-              ),
-              width: 391.0,
-              height: 61.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4.0),
-                color: const Color(0xffffffff),
-                border: Border.all(width: 1.0, color: const Color(0xffa9b9c5)),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/logo.jpg'),
+                    width: 391.0,
+                    height: 61.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4.0),
+                      color: const Color(0xffffffff),
+                      border: Border.all(
+                          width: 1.0, color: const Color(0xffa9b9c5)),
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          'Gulf Doe',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: const Color(0xff000000),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            'Hi! How are you?',
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: const Color(0xffa9b9c5),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Flexible(
+                        child: Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage('assets/logo.jpg'),
                             ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        '6 Tue, 3:45 pm',
-                        style: TextStyle(
-                          fontSize: 9,
-                          fontWeight: FontWeight.w300,
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Column(
+                              children: [
+                                Flexible(
+                                  child: Row(
+                                    children: [
+                                      FittedBox(
+                                        child: Text(
+                                          'Gulf Doe',
+                                          style: TextStyle(
+                                            fontSize: 13,
+                                            color: const Color(0xff000000),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    'Hi! How are you?',
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: const Color(0xffa9b9c5),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Spacer(),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                '6 Tue, 3:45 pm',
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  ],
-                ),
-              ),
-              width: 391.0,
-              height: 61.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4.0),
-                color: const Color(0xffffffff),
-                border: Border.all(width: 1.0, color: const Color(0xffa9b9c5)),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/logo.jpg'),
+                    width: 391.0,
+                    height: 61.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4.0),
+                      color: const Color(0xffffffff),
+                      border: Border.all(
+                          width: 1.0, color: const Color(0xffa9b9c5)),
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          'Gulf Doe',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: const Color(0xff000000),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            'Hi! How are you?',
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: const Color(0xffa9b9c5),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        '6 Tue, 3:45 pm',
-                        style: TextStyle(
-                          fontSize: 9,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              width: 391.0,
-              height: 61.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4.0),
-                color: const Color(0xffffffff),
-                border: Border.all(width: 1.0, color: const Color(0xffa9b9c5)),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/logo.jpg'),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          'Gulf Doe',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: const Color(0xff000000),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            'Hi! How are you?',
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: const Color(0xffa9b9c5),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        '6 Tue, 3:45 pm',
-                        style: TextStyle(
-                          fontSize: 9,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              width: 391.0,
-              height: 61.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4.0),
-                color: const Color(0xffffffff),
-                border: Border.all(width: 1.0, color: const Color(0xffa9b9c5)),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/logo.jpg'),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          'Gulf Doe',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: const Color(0xff000000),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Text(
-                            'Hi! How are you?',
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: const Color(0xffa9b9c5),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        '6 Tue, 3:45 pm',
-                        style: TextStyle(
-                          fontSize: 9,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              width: 391.0,
-              height: 61.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4.0),
-                color: const Color(0xffffffff),
-                border: Border.all(width: 1.0, color: const Color(0xffa9b9c5)),
+                  ),
+                ],
               ),
             ),
           ],

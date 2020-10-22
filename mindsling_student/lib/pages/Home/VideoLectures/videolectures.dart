@@ -65,17 +65,19 @@ class _VideoLecturesState extends State<VideoLectures> {
                               ),
                             ),
                           ),
-                          Spacer(flex: 4),
-                          Flexible(
-                            flex: 5,
+                          SizedBox(height: 2 * SizeConfig.heightMultiplier),
+                          Expanded(
                             child: Padding(
-                              padding: EdgeInsets.only(
-                                  left: 4.63 * SizeConfig.widthMultiplier),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 1.85 * SizeConfig.widthMultiplier,
+                                  vertical: 0.97 * SizeConfig.heightMultiplier),
                               child: Align(
                                 alignment: Alignment.centerLeft,
-                                child: Text(
-                                  'Math lecture',
-                                  style: AppTheme.headerText2,
+                                child: FittedBox(
+                                  child: Text(
+                                    'Math lecture',
+                                    style: AppTheme.vidHeaderText,
+                                  ),
                                 ),
                               ),
                             ),
@@ -83,7 +85,7 @@ class _VideoLecturesState extends State<VideoLectures> {
                         ],
                       ),
                       width: 91.67 * SizeConfig.widthMultiplier,
-                      height: 39.4 * SizeConfig.heightMultiplier,
+                      height: 35.4 * SizeConfig.heightMultiplier,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
                         color: const Color(0xffffffff),

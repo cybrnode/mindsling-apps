@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/size_config.dart';
+import 'package:mindsling_student/styling.dart';
 
 class LiveSessions extends StatefulWidget {
   @override
@@ -48,9 +50,10 @@ class _LiveSessionsState extends State<LiveSessions> {
                         ),
                       ),
                     ),
+                    SizedBox(height: 3 * SizeConfig.heightMultiplier),
                     Container(
-                      width: 387.0,
-                      height: 83.0,
+                      width: 100.0 * SizeConfig.widthMultiplier,
+                      height: 10.0 * SizeConfig.heightMultiplier,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.0),
                         color: const Color(0xffffffff),
@@ -70,23 +73,26 @@ class _LiveSessionsState extends State<LiveSessions> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             // mainAxisSize: MainAxisSize.min,
                             children: [
-                              Row(
-                                children: [
-                                  Text(
-                                    'Parent Teacher Meeting',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: const Color(0xff000000),
-                                      fontWeight: FontWeight.w700,
+                              Flexible(
+                                child: Row(
+                                  children: [
+                                    FittedBox(
+                                      child: Text(
+                                        'Parent Teacher Meeting',
+                                        style: AppTheme.headerText2,
+                                      ),
                                     ),
-                                  ),
-                                  Spacer(),
-                                  Text(
-                                    '23-07-2020',
-                                    style: TextStyle(
-                                        color: Colors.grey[400], fontSize: 12),
-                                  ),
-                                ],
+                                    Spacer(),
+                                    FittedBox(
+                                      child: Text(
+                                        '23-07-2020',
+                                        style: TextStyle(
+                                            color: Colors.grey[400],
+                                            fontSize: 12),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                               // SizedBox(height: 10),
                               Row(
@@ -94,15 +100,12 @@ class _LiveSessionsState extends State<LiveSessions> {
                                   // Spacer(),
                                   Flexible(
                                     flex: 3,
-                                    child: Text(
-                                      'You requested a meeting with Norma Alex teacher',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 12,
-                                        color: const Color(0xffacacac),
-                                        height: 1.5,
-                                      ),
-                                      // textAlign: TextAlign.left,
+                                    child: FittedBox(
+                                      child: Text(
+                                          'You requested a meeting with Norma Alex teacher',
+                                          style: AppTheme.notifSubText
+                                          // textAlign: TextAlign.left,
+                                          ),
                                     ),
                                   ),
 
@@ -117,11 +120,7 @@ class _LiveSessionsState extends State<LiveSessions> {
                                     flex: 2,
                                     child: Text(
                                       'Requested Time: Today at 6pm',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 11,
-                                        color: const Color(0xffacacac),
-                                      ),
+                                      style: AppTheme.shortNotifSubText,
                                       // textAlign: TextAlign.,
                                     ),
                                   ),
