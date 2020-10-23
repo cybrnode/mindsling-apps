@@ -12,6 +12,8 @@ abstract class AppTheme {
   static const Color buttonColor = Color(0xFF26A69A);
   static const Color subTextColor = Color(0xffa9b9c5);
 
+  static const Color chatColor1 = Color(0xFF26A69A);
+  static const Color chatColor2 = Color(0xfff1f9ff);
   static final AppBar appBar = AppBar(
     backgroundColor: Colors.transparent,
     iconTheme: IconThemeData(
@@ -137,5 +139,27 @@ abstract class AppTheme {
     fontFamily: 'Poppins',
     fontSize: 1.5 * SizeConfig.textMultiplier,
     color: Colors.white,
+  );
+
+  static final TextStyle chatText = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 14,
+    color: Colors.white,
+  );
+  static final TextStyle chatText2 = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 2 * SizeConfig.textMultiplier,
+    color: appBackgroundColor,
+  );
+  static final TextStyle chatTimeText = TextStyle(
+    fontSize: 2 * SizeConfig.textMultiplier,
+    color: const Color(0xff7a8fa6),
+    fontWeight: FontWeight.w700,
+  );
+
+  static final TextStyle chatMenuText = TextStyle(
+    fontSize: 2 * SizeConfig.textMultiplier,
+    color: const Color(0xff01a89e),
+    fontWeight: FontWeight.w700,
   );
 }
