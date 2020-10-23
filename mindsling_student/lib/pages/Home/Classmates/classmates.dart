@@ -59,26 +59,31 @@ class _ClassMatesState extends State<ClassMates> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Container(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundImage:
-                                        AssetImage('assets/logo.jpg'),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                'Gulf',
-                                style: TextStyle(
-                                  fontSize: 11,
+                        InkResponse(
+                          child: Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Row(
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundImage:
+                                          AssetImage('assets/logo.jpg'),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                            ],
+                                Text(
+                                  'Gulf',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/homework');
+                          },
                         ),
                         Container(
                           child: Column(
