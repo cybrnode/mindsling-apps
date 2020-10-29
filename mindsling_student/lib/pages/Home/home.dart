@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
         elevation: 0,
         title: Image.asset(
           'assets/mind-01_3.png',
-          fit: BoxFit.fill,
+          fit: BoxFit.cover,
         ),
         centerTitle: true,
         actions: <Widget>[
@@ -36,16 +36,20 @@ class _HomeState extends State<Home> {
             children: <Widget>[
               new Column(
                 children: [
-                  new Container(
-                    height: MediaQuery.of(context).size.height / 3,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.teal[400],
+                  Column(
+                    children: [
+                      new Container(
+                        height: MediaQuery.of(context).size.height / 3,
+                        width: MediaQuery.of(context).size.width,
+                        color: Colors.teal[400],
+                      ),
+                    ],
                   ),
                 ],
               ),
               Padding(
                 padding: new EdgeInsets.only(
-                    top: 21.84 * SizeConfig.heightMultiplier,
+                    top: 22.5 * SizeConfig.heightMultiplier,
                     right: 4.62 * SizeConfig.widthMultiplier,
                     left: 4.62 * SizeConfig.widthMultiplier),
                 child: Container(
@@ -73,18 +77,22 @@ class _HomeState extends State<Home> {
                             child: Column(
                               children: [
                                 Flexible(
-                                  flex: 2,
-                                  child: Text(
-                                    'John Doe',
-                                    style: AppTheme.homeCardText,
+                                  flex: 4,
+                                  child: FittedBox(
+                                    child: Text(
+                                      'John Doe',
+                                      style: AppTheme.homeCardText,
+                                    ),
                                   ),
                                 ),
                                 Spacer(),
                                 Flexible(
                                   flex: 4,
-                                  child: Text(
-                                    'Class 8th, B',
-                                    style: AppTheme.homeCardsubText,
+                                  child: FittedBox(
+                                    child: Text(
+                                      'Class 8th, B',
+                                      style: AppTheme.homeCardsubText,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -98,7 +106,7 @@ class _HomeState extends State<Home> {
               ),
               Padding(
                 padding: new EdgeInsets.only(
-                    top: 21.84 * SizeConfig.heightMultiplier,
+                    top: 22.5 * SizeConfig.heightMultiplier,
                     right: 4.62 * SizeConfig.widthMultiplier,
                     left: 4.62 * SizeConfig.widthMultiplier),
                 child: FractionalTranslation(
@@ -116,7 +124,7 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                       child: CircleAvatar(
-                        radius: 50.0,
+                        radius: 40.0,
                         backgroundImage: AssetImage('assets/logo.jpg'),
                       ),
                     ),
@@ -132,8 +140,8 @@ class _HomeState extends State<Home> {
               padding: EdgeInsets.symmetric(
                   horizontal: 5.78 * SizeConfig.widthMultiplier,
                   vertical: 3.03 * SizeConfig.heightMultiplier),
-              childAspectRatio: (24 / 18),
-              crossAxisSpacing: 4.85 * SizeConfig.heightMultiplier,
+              childAspectRatio: (25 / 20),
+              crossAxisSpacing: 5 * SizeConfig.heightMultiplier,
               mainAxisSpacing: 9.25 * SizeConfig.widthMultiplier,
               crossAxisCount: 2,
               children: <Widget>[
@@ -174,7 +182,7 @@ class _HomeState extends State<Home> {
                             ),
                           ],
                         ),
-                        Text("HomeWork"),
+                        FittedBox(child: Text("HomeWork")),
                       ],
                     ),
                     // color: Colors.teal[100],
@@ -218,7 +226,7 @@ class _HomeState extends State<Home> {
                             ),
                           ],
                         ),
-                        Text("Classes"),
+                        FittedBox(child: Text("Classes")),
                       ],
                     ), // color: Colors.teal[200],
                   ),
@@ -260,7 +268,7 @@ class _HomeState extends State<Home> {
                             ),
                           ],
                         ),
-                        Text("Games"),
+                        FittedBox(child: Text("Games")),
                       ],
                     ),
                   ),
@@ -299,7 +307,7 @@ class _HomeState extends State<Home> {
                             ),
                           ],
                         ),
-                        Text("Exams"),
+                        FittedBox(child: Text("Exams")),
                       ],
                     ),
                   ),
@@ -339,7 +347,7 @@ class _HomeState extends State<Home> {
                             ),
                           ],
                         ),
-                        Text("Video Lectures"),
+                        FittedBox(child: Text("Video Lectures")),
                       ],
                     ),
                   ),
@@ -379,7 +387,7 @@ class _HomeState extends State<Home> {
                             ),
                           ],
                         ),
-                        Text("Tutor Notices"),
+                        FittedBox(child: Text("Tutor Notices")),
                       ],
                     ),
                   ),
@@ -419,7 +427,7 @@ class _HomeState extends State<Home> {
                             ),
                           ],
                         ),
-                        Text("Event"),
+                        FittedBox(child: Text("Event")),
                       ],
                     ),
                     // color: Colors.teal[200],
@@ -461,7 +469,7 @@ class _HomeState extends State<Home> {
                             ),
                           ],
                         ),
-                        Text("Tutor"),
+                        FittedBox(child: Text("Tutor")),
                       ],
                     ),
                   ),

@@ -27,7 +27,9 @@ class _HomeWorkState extends State<HomeWork> {
         actions: <Widget>[
           IconButton(
             icon: Icon(FontAwesomeIcons.bell),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications');
+            },
           ),
         ],
       ),
@@ -42,43 +44,101 @@ class _HomeWorkState extends State<HomeWork> {
                   style: AppTheme.title,
                 ),
               ),
+              SizedBox(height: 4.62 * SizeConfig.heightMultiplier),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: 4.63 * SizeConfig.widthMultiplier,
-                    vertical: 3 * SizeConfig.heightMultiplier),
+                    horizontal: 3.63 * SizeConfig.widthMultiplier,
+                    vertical: 2 * SizeConfig.heightMultiplier),
                 child: Column(
                   children: <Widget>[
-                    Card(
-                      child: ListTile(
-                        title: Text(
-                          'English',
+                    Container(
+                      decoration: AppTheme.boxShadow,
+                      child: Card(
+                        // shape: Border(
+                        //   left: BorderSide(color: Colors.red, width: 5),
+                        // ),
+                        child: ListTile(
+                          contentPadding:
+                              EdgeInsets.only(left: 0.0, right: 10.0),
+                          title: Text(
+                            'English',
+                          ),
+                          leading: Container(
+                            height: 25,
+                            width: 10,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(12.0),
+                                bottomRight: Radius.circular(12.0),
+                              ),
+                              color: AppTheme.appBackgroundColor,
+                            ),
+                          ),
+                          trailing: Icon(Icons.keyboard_arrow_right),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/homework_detail');
+                          },
                         ),
-                        trailing: Icon(Icons.keyboard_arrow_right),
-                        onTap: () {
-                          Navigator.pushNamed(context, '/homework_detail');
-                        },
                       ),
                     ),
-                    Card(
-                      child: ListTile(
-                        title: Text(
-                          'Math',
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      decoration: AppTheme.boxShadow,
+                      child: Card(
+                        child: ListTile(
+                          contentPadding:
+                              EdgeInsets.only(left: 0.0, right: 10.0),
+                          title: Text(
+                            'Math',
+                          ),
+                          leading: Container(
+                            height: 25,
+                            width: 10,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(10.0),
+                                bottomRight: Radius.circular(10.0),
+                              ),
+                              color: AppTheme.appBackgroundColor,
+                            ),
+                          ),
+                          trailing: Icon(Icons.keyboard_arrow_right),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/homework_detail');
+                          },
                         ),
-                        trailing: Icon(Icons.keyboard_arrow_right),
-                        onTap: () {
-                          Navigator.pushNamed(context, '/homework_detail');
-                        },
                       ),
                     ),
-                    Card(
-                      child: ListTile(
-                        title: Text(
-                          'Biology',
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      decoration: AppTheme.boxShadow,
+                      child: Card(
+                        child: ListTile(
+                          contentPadding:
+                              EdgeInsets.only(left: 0.0, right: 10.0),
+                          title: Text(
+                            'Biology',
+                          ),
+                          leading: Container(
+                            height: 25,
+                            width: 10,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(10.0),
+                                bottomRight: Radius.circular(10.0),
+                              ),
+                              color: AppTheme.appBackgroundColor,
+                            ),
+                          ),
+                          trailing: Icon(Icons.keyboard_arrow_right),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/homework_detail');
+                          },
                         ),
-                        trailing: Icon(Icons.keyboard_arrow_right),
-                        onTap: () {
-                          Navigator.pushNamed(context, '/homework_detail');
-                        },
                       ),
                     ),
                   ],

@@ -15,10 +15,10 @@ class _EventsState extends State<Events> {
       // extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        elevation: 0,
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
-        elevation: 0,
         title: Image.asset(
           'assets/mind-01_3.png',
           fit: BoxFit.fill,
@@ -27,7 +27,9 @@ class _EventsState extends State<Events> {
         actions: <Widget>[
           IconButton(
             icon: Icon(FontAwesomeIcons.bell),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications');
+            },
           ),
         ],
       ),
@@ -53,59 +55,62 @@ class _EventsState extends State<Events> {
                       ),
                     ),
                     SizedBox(height: 3.64 * SizeConfig.heightMultiplier),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 1.85 * SizeConfig.widthMultiplier,
-                          vertical: 0.97 * SizeConfig.heightMultiplier),
-                      child: Container(
-                        child: ButtonBar(
-                          mainAxisSize: MainAxisSize.min,
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          // mainAxisSize: MainAxisSize.min,
+                          // crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            ButtonTheme(
-                              minWidth: MediaQuery.of(context).size.width / 4,
-                              height: 41.0,
+                            Flexible(
                               child: RaisedButton(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(21.0),
                                 ),
                                 onPressed: () {},
                                 color: Colors.teal[400],
-                                child: Text(
-                                  'Today',
-                                  style: TextStyle(color: Colors.white),
+                                child: FittedBox(
+                                  child: Text(
+                                    'Today',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                                 ),
                               ),
                             ),
-                            ButtonTheme(
-                              minWidth: MediaQuery.of(context).size.width / 4,
-                              height: 47.0,
-                              child: RaisedButton(
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Flexible(
+                              child: OutlineButton(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(21.0),
                                 ),
                                 onPressed: () {},
-                                highlightColor: Colors
-                                    .teal[400], //Replace with actual colors
-                                color: Colors.white,
-                                // color: Colors.teal[400],
-                                child: Text(
-                                  'Up coming',
-                                  style: TextStyle(color: Colors.grey),
+                                color: const Color(0xffa9b9c5),
+                                child: FittedBox(
+                                  child: Text(
+                                    'Up coming',
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
                                 ),
                               ),
                             ),
-                            ButtonTheme(
-                              minWidth: MediaQuery.of(context).size.width / 4,
-                              height: 47.0,
-                              child: RaisedButton(
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Flexible(
+                              child: OutlineButton(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(21.0),
                                 ),
                                 onPressed: () {},
-                                color: Colors.white,
-                                child: Text(
-                                  'Previous',
-                                  style: TextStyle(color: Colors.grey),
+                                color: const Color(0xffa9b9c5),
+                                child: FittedBox(
+                                  child: Text(
+                                    'Previous',
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
                                 ),
                               ),
                             ),
@@ -179,9 +184,7 @@ class _EventsState extends State<Events> {
                                               alignment: Alignment.bottomLeft,
                                               child: Text(
                                                 '18-01-20 : 9:20 am',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                ),
+                                                style: AppTheme.eventTitle,
                                               ),
                                             ),
                                           ),
@@ -267,9 +270,7 @@ class _EventsState extends State<Events> {
                                               alignment: Alignment.bottomLeft,
                                               child: Text(
                                                 '18-01-20 : 9:20 am',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                ),
+                                                style: AppTheme.eventTitle,
                                               ),
                                             ),
                                           ),
@@ -355,9 +356,7 @@ class _EventsState extends State<Events> {
                                               alignment: Alignment.bottomLeft,
                                               child: Text(
                                                 '18-01-20 : 9:20 am',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                ),
+                                                style: AppTheme.eventTitle,
                                               ),
                                             ),
                                           ),
@@ -393,6 +392,14 @@ class _EventsState extends State<Events> {
             ),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(
+          Icons.add,
+          color: AppTheme.appBackgroundColor,
+        ),
+        backgroundColor: Colors.white,
       ),
     );
   }

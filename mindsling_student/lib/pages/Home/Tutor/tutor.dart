@@ -26,7 +26,9 @@ class _TutorState extends State<Tutor> {
         actions: <Widget>[
           IconButton(
             icon: Icon(FontAwesomeIcons.bell),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications');
+            },
           ),
         ],
       ),
@@ -52,7 +54,7 @@ class _TutorState extends State<Tutor> {
                     ),
                     Container(
                       width: 100 * SizeConfig.widthMultiplier,
-                      height: 35 * SizeConfig.heightMultiplier,
+                      height: 40 * SizeConfig.heightMultiplier,
                       child: Card(
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
@@ -103,8 +105,8 @@ class _TutorState extends State<Tutor> {
                               SizedBox(height: 1 * SizeConfig.heightMultiplier),
                               Flexible(
                                 child: Row(
-                                  // mainAxisAlignment:
-                                  //     MainAxisAlignment.spaceBetween,
+                                  // crossAxisAlignment:
+                                  //     CrossAxisAlignment.stretch,
                                   children: [
                                     FittedBox(
                                       child: Text(
@@ -117,39 +119,36 @@ class _TutorState extends State<Tutor> {
                                 ),
                               ),
                               SizedBox(height: 1 * SizeConfig.heightMultiplier),
-                              Flexible(
-                                child: Row(
-                                  // mainAxisAlignment:
-                                  //     MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    FittedBox(
-                                      child: Text(
-                                        'daily at 8:00 am',
-                                        style: AppTheme.subText,
-                                      ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  FittedBox(
+                                    child: Text(
+                                      'daily at 8:00 am',
+                                      style: AppTheme.subText,
                                     ),
-                                    // Spacer(),
-                                  ],
-                                ),
+                                  ),
+                                  // Spacer(),
+                                ],
                               ),
-                              SizedBox(height: 4 * SizeConfig.heightMultiplier),
-                              Expanded(
-                                child: Center(
-                                  child: ButtonTheme(
-                                    minWidth: 70 * SizeConfig.widthMultiplier,
-                                    height: 100 * SizeConfig.heightMultiplier,
-                                    child: RaisedButton(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(18.0),
-                                      ),
-                                      onPressed: () {},
-                                      color: Colors.teal[400],
-                                      child: Center(
-                                        child: Text(
-                                          'Accept',
-                                          style: TextStyle(color: Colors.white),
-                                        ),
+                              SizedBox(height: 7 * SizeConfig.heightMultiplier),
+                              Align(
+                                alignment: Alignment.bottomCenter,
+                                child: ButtonTheme(
+                                  minWidth:
+                                      MediaQuery.of(context).size.width / 4,
+                                  height: 7.5 * SizeConfig.heightMultiplier,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                    ),
+                                    onPressed: () {},
+                                    color: Colors.teal[400],
+                                    child: Center(
+                                      child: Text(
+                                        'Accept',
+                                        style: TextStyle(color: Colors.white),
                                       ),
                                     ),
                                   ),

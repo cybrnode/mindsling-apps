@@ -27,7 +27,9 @@ class _ClassesState extends State<Classes> {
         actions: <Widget>[
           IconButton(
             icon: Icon(FontAwesomeIcons.bell),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications');
+            },
           ),
         ],
       ),
@@ -35,8 +37,8 @@ class _ClassesState extends State<Classes> {
         child: Center(
           child: Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: 4.6 * SizeConfig.widthMultiplier,
-                vertical: 2.42 * SizeConfig.heightMultiplier),
+                horizontal: 3.6 * SizeConfig.widthMultiplier,
+                vertical: 1.42 * SizeConfig.heightMultiplier),
             child: Column(
               children: [
                 Column(
@@ -49,13 +51,14 @@ class _ClassesState extends State<Classes> {
                     ),
                     SizedBox(height: 2.42 * SizeConfig.heightMultiplier),
                     Container(
+                      decoration: AppTheme.boxShadow,
                       child: AspectRatio(
                         aspectRatio: 4 / 2,
                         child: Card(
                           child: Padding(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 3.47 * SizeConfig.widthMultiplier,
-                                vertical: 1.80 * SizeConfig.heightMultiplier),
+                                horizontal: 2.47 * SizeConfig.widthMultiplier,
+                                vertical: 0.80 * SizeConfig.heightMultiplier),
                             child: Column(
                               // crossAxisAlignment: CrossAxisAlignment.sta,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -115,6 +118,7 @@ class _ClassesState extends State<Classes> {
                       ),
                     ),
                     Container(
+                      decoration: AppTheme.boxShadow,
                       child: AspectRatio(
                         aspectRatio: 4 / 2,
                         child: Card(
@@ -129,7 +133,7 @@ class _ClassesState extends State<Classes> {
                               children: [
                                 Row(
                                   children: [
-                                    Text('Monday', style: AppTheme.headerText),
+                                    Text('Tuesday', style: AppTheme.headerText),
                                   ],
                                 ),
                                 Row(
@@ -178,6 +182,7 @@ class _ClassesState extends State<Classes> {
                       ),
                     ),
                     Container(
+                      decoration: AppTheme.boxShadow,
                       child: AspectRatio(
                         aspectRatio: 4 / 2,
                         child: Card(
@@ -192,7 +197,8 @@ class _ClassesState extends State<Classes> {
                               children: [
                                 Row(
                                   children: [
-                                    Text('Monday', style: AppTheme.headerText),
+                                    Text('Wednesday',
+                                        style: AppTheme.headerText),
                                   ],
                                 ),
                                 Row(
@@ -241,6 +247,7 @@ class _ClassesState extends State<Classes> {
                       ),
                     ),
                     Container(
+                      decoration: AppTheme.boxShadow,
                       child: AspectRatio(
                         aspectRatio: 4 / 2,
                         child: Card(
@@ -255,7 +262,8 @@ class _ClassesState extends State<Classes> {
                               children: [
                                 Row(
                                   children: [
-                                    Text('Monday', style: AppTheme.headerText),
+                                    Text('Thursday',
+                                        style: AppTheme.headerText),
                                   ],
                                 ),
                                 Row(

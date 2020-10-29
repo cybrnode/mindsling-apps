@@ -21,12 +21,6 @@ class _UpdateProfileState extends State<UpdateProfile> {
           fit: BoxFit.fill,
         ),
         centerTitle: true,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(FontAwesomeIcons.bell),
-            onPressed: () {},
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -67,23 +61,22 @@ class _UpdateProfileState extends State<UpdateProfile> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Expanded(child: Container()),
+                            // Expanded(child: Container()),
                             Expanded(
                               child: Column(
                                 children: [
+                                  CircleAvatar(
+                                    radius: 50.0,
+                                    backgroundColor: Colors.transparent,
+                                    backgroundImage: AssetImage(
+                                        'assets/icons/NoPath - Copy (-40.png'),
+                                  ),
+                                  Spacer(),
                                   Flexible(
                                     flex: 2,
                                     child: Text(
                                       'John Doe',
-                                      style: AppTheme.homeCardText,
-                                    ),
-                                  ),
-                                  Spacer(),
-                                  Flexible(
-                                    flex: 4,
-                                    child: Text(
-                                      'Class 8th, B',
-                                      style: AppTheme.homeCardsubText,
+                                      style: AppTheme.profileCardText,
                                     ),
                                   ),
                                 ],
@@ -92,34 +85,6 @@ class _UpdateProfileState extends State<UpdateProfile> {
                           ],
                         ),
                       ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: new EdgeInsets.only(
-                      top: 21.84 * SizeConfig.heightMultiplier,
-                      right: 4.62 * SizeConfig.widthMultiplier,
-                      left: 4.62 * SizeConfig.widthMultiplier),
-                  child: FractionalTranslation(
-                    translation: Offset(0.0, -0.4),
-                    child: Align(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                                blurRadius: 5,
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 7)
-                          ],
-                        ),
-                        child: CircleAvatar(
-                          radius: 50.0,
-                          backgroundImage: AssetImage('assets/logo.jpg'),
-                        ),
-                      ),
-                      alignment: FractionalOffset(0.5, 0.0),
                     ),
                   ),
                 ),
@@ -134,9 +99,9 @@ class _UpdateProfileState extends State<UpdateProfile> {
                   Container(
                     child: TextField(
                       decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          FontAwesomeIcons.chalkboardTeacher,
-                          color: Colors.teal[400],
+                        prefixIcon: ImageIcon(
+                          AssetImage('assets/icons/Group 623.png'),
+                          color: AppTheme.iconColor,
                         ),
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.teal[400]),
@@ -149,8 +114,8 @@ class _UpdateProfileState extends State<UpdateProfile> {
                   Container(
                     child: TextField(
                       decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          FontAwesomeIcons.doorClosed,
+                        prefixIcon: ImageIcon(
+                          AssetImage('assets/icons/Icon awesome-building.png'),
                           color: Colors.teal[400],
                         ),
                         focusedBorder: UnderlineInputBorder(
@@ -163,15 +128,17 @@ class _UpdateProfileState extends State<UpdateProfile> {
                   SizedBox(height: 1 * SizeConfig.heightMultiplier),
                   Container(
                     child: TextField(
+                      textAlignVertical: TextAlignVertical.bottom,
                       decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(10),
                         prefixIcon: Icon(
-                          FontAwesomeIcons.phoneAlt,
+                          Icons.email,
                           color: Colors.teal[400],
                         ),
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.teal[400]),
                         ),
-                        hintText: 'Phone no',
+                        hintText: 'Email',
                       ),
                     ),
                   ),
@@ -179,8 +146,8 @@ class _UpdateProfileState extends State<UpdateProfile> {
                   Container(
                     child: TextField(
                       decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          FontAwesomeIcons.userLock,
+                        prefixIcon: ImageIcon(
+                          AssetImage('assets/icons/password.png'),
                           color: Colors.teal[400],
                         ),
                         focusedBorder: UnderlineInputBorder(
@@ -200,7 +167,7 @@ class _UpdateProfileState extends State<UpdateProfile> {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/home');
+                          Navigator.pushReplacementNamed(context, '/bottomBar');
                         },
                         color: Colors.teal[400],
                         child: Text(

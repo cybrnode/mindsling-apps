@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/size_config.dart';
+import 'package:mindsling_student/styling.dart';
 
 class MeetingDetails extends StatefulWidget {
   @override
@@ -24,7 +26,9 @@ class _MeetingDetailsState extends State<MeetingDetails> {
         actions: <Widget>[
           IconButton(
             icon: Icon(FontAwesomeIcons.bell),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications');
+            },
           ),
         ],
       ),
@@ -49,99 +53,108 @@ class _MeetingDetailsState extends State<MeetingDetails> {
                       width: MediaQuery.of(context).size.width,
                     ),
                     Container(
-                      child: AspectRatio(
-                        aspectRatio: 4 / 3,
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              // crossAxisAlignment: CrossAxisAlignment.sta,
-                              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              // mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text('Parent Teaching Meeting'),
-                                    Spacer(),
-                                    Text(
-                                      '23-07-2020',
-                                      style: TextStyle(color: Colors.grey[400]),
+                      width: 100 * SizeConfig.widthMultiplier,
+                      height: 40 * SizeConfig.heightMultiplier,
+                      child: Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            // crossAxisAlignment: CrossAxisAlignment.sta,
+                            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            // mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Row(
+                                children: [
+                                  Flexible(
+                                    flex: 4,
+                                    child: FittedBox(
+                                      child: Text(
+                                        'Parent teacher meeting',
+                                        style: AppTheme.headerText2,
+                                      ),
                                     ),
-                                  ],
-                                ),
-                                SizedBox(height: 20),
-                                Row(
+                                  ),
+                                  Spacer(),
+                                  Flexible(
+                                    flex: 2,
+                                    child: FittedBox(
+                                      child: Text(
+                                        '23-07-2020',
+                                        style: AppTheme.subText,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 1 * SizeConfig.heightMultiplier),
+                              Flexible(
+                                child: Row(
                                   // mainAxisAlignment:
                                   //     MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      'You received a video lecture from teacher',
-                                      style: TextStyle(color: Colors.grey[400]),
-                                    ),
-                                    // Spacer(),
-                                  ],
-                                ),
-                                SizedBox(height: 20),
-                                Row(
-                                  // mainAxisAlignment:
-                                  //     MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Requested Time : Today at 6pm',
-                                      style: TextStyle(color: Colors.grey[400]),
-                                    ),
-                                    // Spacer(),
-                                  ],
-                                ),
-                                SizedBox(height: 30),
-                                Row(
-                                  // mainAxisAlignment:
-                                  //     MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Requested by : Alex John',
-                                      style: TextStyle(color: Colors.grey[400]),
-                                    ),
-                                    // Spacer(),
-                                  ],
-                                ),
-                                SizedBox(height: 30),
-                                Row(
-                                  // mainAxisAlignment:
-                                  //     MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Requested Time : Norma Alex',
-                                      style: TextStyle(color: Colors.grey[400]),
-                                    ),
-                                    // Spacer(),
-                                  ],
-                                ),
-                                SizedBox(height: 30),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    ButtonTheme(
-                                      minWidth: 280.0,
-                                      height: 47.0,
-                                      child: RaisedButton(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(18.0),
-                                        ),
-                                        onPressed: () {},
-                                        color: Colors.teal[400],
-                                        child: Text(
-                                          'Start Now',
-                                          style: TextStyle(color: Colors.white),
-                                        ),
+                                    FittedBox(
+                                      child: Text(
+                                        'Requested Time: Today at 6pm',
+                                        style: AppTheme.subText,
                                       ),
                                     ),
                                     // Spacer(),
                                   ],
                                 ),
-                              ],
-                            ),
+                              ),
+                              SizedBox(height: 1 * SizeConfig.heightMultiplier),
+                              Flexible(
+                                child: Row(
+                                  // crossAxisAlignment:
+                                  //     CrossAxisAlignment.stretch,
+                                  children: [
+                                    FittedBox(
+                                      child: Text(
+                                        "Requested By: Alex John",
+                                        style: AppTheme.subText,
+                                      ),
+                                    ),
+                                    // Spacer(),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 1 * SizeConfig.heightMultiplier),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  FittedBox(
+                                    child: Text(
+                                      'Student: Norma Alex',
+                                      style: AppTheme.subText,
+                                    ),
+                                  ),
+                                  // Spacer(),
+                                ],
+                              ),
+                              SizedBox(height: 7 * SizeConfig.heightMultiplier),
+                              Align(
+                                alignment: Alignment.bottomCenter,
+                                child: ButtonTheme(
+                                  minWidth:
+                                      MediaQuery.of(context).size.width / 4,
+                                  height: 7.5 * SizeConfig.heightMultiplier,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                    ),
+                                    onPressed: () {},
+                                    color: Colors.teal[400],
+                                    child: Center(
+                                      child: Text(
+                                        'Start Now',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ), // Spacer(),
+                            ],
                           ),
                         ),
                       ),

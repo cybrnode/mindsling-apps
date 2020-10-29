@@ -26,7 +26,9 @@ class _MorePagesState extends State<MorePages> {
         actions: <Widget>[
           IconButton(
             icon: Icon(FontAwesomeIcons.bell),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications');
+            },
           ),
         ],
       ),
@@ -46,8 +48,8 @@ class _MorePagesState extends State<MorePages> {
               padding: EdgeInsets.symmetric(
                   horizontal: 5.78 * SizeConfig.widthMultiplier,
                   vertical: 3.03 * SizeConfig.heightMultiplier),
-              childAspectRatio: (24 / 18),
-              crossAxisSpacing: 4.85 * SizeConfig.heightMultiplier,
+              childAspectRatio: (25 / 20),
+              crossAxisSpacing: 5 * SizeConfig.heightMultiplier,
               mainAxisSpacing: 9.25 * SizeConfig.widthMultiplier,
               crossAxisCount: 2,
               children: <Widget>[
@@ -77,16 +79,13 @@ class _MorePagesState extends State<MorePages> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 30,
+                                radius: 28,
                                 // backgroundImage: AssetImage(
                                 //   'assets/greyhome-05.png',
                                 // ),
-                                child: Icon(
-                                  Icons.settings,
-                                  color: AppTheme.iconColor,
-                                ),
+                                child: Image.asset(
+                                    'assets/icons/Icon feather-settings.png'),
                                 backgroundColor: AppTheme.iconBGColor,
-                                // backgroundColor: Colors.teal[100],
                               ),
                             ],
                           ),
@@ -126,7 +125,7 @@ class _MorePagesState extends State<MorePages> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 30,
+                                radius: 28,
                                 child: Icon(
                                   FontAwesomeIcons.exclamationCircle,
                                   color: AppTheme.iconColor,
@@ -171,7 +170,7 @@ class _MorePagesState extends State<MorePages> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 30,
+                                radius: 28,
                                 // backgroundImage: AssetImage(
                                 //   'assets/greyhome-05.png',
                                 // ),
@@ -219,16 +218,10 @@ class _MorePagesState extends State<MorePages> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 30,
-                                // backgroundImage: AssetImage(
-                                //   'assets/greyhome-05.png',
-                                // ),
-                                child: Icon(
-                                  FontAwesomeIcons.file,
-                                  color: AppTheme.iconColor,
-                                ),
+                                radius: 28,
+                                child:
+                                    Image.asset('assets/icons/Group 1127.png'),
                                 backgroundColor: AppTheme.iconBGColor,
-                                // backgroundColor: Colors.teal[100],
                               ),
                             ],
                           ),
@@ -268,16 +261,10 @@ class _MorePagesState extends State<MorePages> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 30,
-                                // backgroundImage: AssetImage(
-                                //   'assets/greyhome-05.png',
-                                // ),
-                                child: Icon(
-                                  FontAwesomeIcons.video,
-                                  color: AppTheme.iconColor,
-                                ),
+                                radius: 28,
+                                child: Image.asset(
+                                    'assets/icons/Icon material-live-tv.png'),
                                 backgroundColor: AppTheme.iconBGColor,
-                                // backgroundColor: Colors.teal[100],
                               ),
                             ],
                           ),
@@ -316,16 +303,10 @@ class _MorePagesState extends State<MorePages> {
                           child: Column(
                             children: [
                               CircleAvatar(
-                                radius: 30,
-                                // backgroundImage: AssetImage(
-                                //   'assets/greyhome-05.png',
-                                // ),
-                                child: Icon(
-                                  FontAwesomeIcons.signOutAlt,
-                                  color: AppTheme.iconColor,
-                                ),
+                                radius: 28,
+                                child:
+                                    Image.asset('assets/icons/Group 1195.png'),
                                 backgroundColor: AppTheme.iconBGColor,
-                                // backgroundColor: Colors.teal[100],
                               ),
                             ],
                           ),
@@ -333,10 +314,9 @@ class _MorePagesState extends State<MorePages> {
                         FittedBox(child: Text("Logout")),
                       ],
                     ),
-                    // color: Colors.teal[200],
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, '/');
+                    Navigator.pushReplacementNamed(context, '/');
                   },
                 ),
               ],

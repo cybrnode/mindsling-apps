@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/size_config.dart';
+import 'package:mindsling_student/styling.dart';
 
 class ForgotPassword extends StatefulWidget {
   @override
@@ -22,81 +24,84 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(35.0),
+          padding: EdgeInsets.all(3 * SizeConfig.heightMultiplier),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               Container(
-                height: MediaQuery.of(context).size.height / 8,
-                width: MediaQuery.of(context).size.width,
-                child: Image(
-                  image: AssetImage("assets/logo.jpg"),
-                ),
-              ),
+                  // height: MediaQuery.of(context).size.height / 8,
+                  // width: MediaQuery.of(context).size.width,
+                  child: Image.asset('assets/icons/Academios-App-Icon-1.png')),
               Container(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 30.0),
-                  child: Text(
-                    'Forgot Password',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.teal[400],
-                    ),
+                child: Text(
+                  'Forgot Password',
+                  style: TextStyle(
+                    fontSize: 2.85 * SizeConfig.textMultiplier,
+                    color: AppTheme.appBackgroundColor,
                   ),
                 ),
               ),
+              SizedBox(
+                height: 1.9 * SizeConfig.heightMultiplier,
+              ),
               Container(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
+                child: Center(
                   child: Text(
                     'You will receive code on phone number',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 2 * SizeConfig.textMultiplier,
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 30),
-              Column(
-                children: [
-                  Container(
-                    child: TextField(
-                      textAlignVertical: TextAlignVertical.bottom,
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(10),
-                        prefixIcon: Icon(
-                          Icons.email,
-                          color: Colors.teal[400],
+              SizedBox(
+                height: 2 * SizeConfig.heightMultiplier,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  // mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      child: TextField(
+                        textAlignVertical: TextAlignVertical.center,
+                        decoration: InputDecoration(
+                          contentPadding:
+                              EdgeInsets.all(1 * SizeConfig.heightMultiplier),
+                          prefixIcon: Icon(
+                            Icons.mail,
+                            color: Colors.teal[400],
+                          ),
+                          hintText: 'E-mail',
                         ),
-                        hintText: 'E-mail',
                       ),
                     ),
-                  ),
-                  SizedBox(height: 20),
-                  Container(
-                    child: TextField(
-                      textAlignVertical: TextAlignVertical.bottom,
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(10),
-                        prefixIcon: Icon(
-                          FontAwesomeIcons.userLock,
-                          color: Colors.teal[400],
+                    SizedBox(height: 6 * SizeConfig.heightMultiplier),
+                    Container(
+                      child: TextField(
+                        textAlignVertical: TextAlignVertical.center,
+                        decoration: InputDecoration(
+                          contentPadding:
+                              EdgeInsets.all(1 * SizeConfig.heightMultiplier),
+                          prefixIcon: ImageIcon(
+                            AssetImage('assets/icons/password.png'),
+                            color: AppTheme.iconColor,
+                          ),
+                          hintText: 'Password',
                         ),
-                        hintText: 'Password',
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              Container(
-                height: MediaQuery.of(context).size.height / 7,
-                width: MediaQuery.of(context).size.width,
-              ),
+              SizedBox(height: 6 * SizeConfig.heightMultiplier),
               ButtonTheme(
                 minWidth: MediaQuery.of(context).size.width,
-                height: 47.0,
+                height: 8 * SizeConfig.heightMultiplier,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
+                    borderRadius: BorderRadius.circular(25.0),
                   ),
                   onPressed: () {
                     Navigator.pushNamed(context, '/resetPassword');
@@ -104,7 +109,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   color: Colors.teal[400],
                   child: Text(
                     'Send Password',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                      fontSize: 2.5 * SizeConfig.textMultiplier,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

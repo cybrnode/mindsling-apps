@@ -15,10 +15,10 @@ class _VideoLecturesState extends State<VideoLectures> {
       // extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        elevation: 0,
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
-        elevation: 0,
         title: Image.asset(
           'assets/mind-01_3.png',
           fit: BoxFit.fill,
@@ -27,7 +27,9 @@ class _VideoLecturesState extends State<VideoLectures> {
         actions: <Widget>[
           IconButton(
             icon: Icon(FontAwesomeIcons.bell),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications');
+            },
           ),
         ],
       ),

@@ -14,10 +14,10 @@ class _ClassMatesState extends State<ClassMates> {
       // extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        elevation: 0,
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
-        elevation: 0,
         title: Image.asset(
           'assets/mind-01_3.png',
           fit: BoxFit.fill,
@@ -26,150 +26,158 @@ class _ClassMatesState extends State<ClassMates> {
         actions: <Widget>[
           IconButton(
             icon: Icon(FontAwesomeIcons.bell),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications');
+            },
           ),
         ],
       ),
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'Classmates',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: const Color(0xff000000),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                    Spacer(
-                      flex: 2,
-                    ),
+                    // SizedBox(
+                    //   height: 10,
+                    // ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        InkResponse(
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Row(
-                                  children: [
-                                    CircleAvatar(
-                                      backgroundImage:
-                                          AssetImage('assets/logo.jpg'),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            'Classmates',
+                            style: AppTheme.title,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Expanded(
+                      child: ListView(
+                        // This next line does the trick.
+                        scrollDirection: Axis.horizontal,
+                        children: <Widget>[
+                          InkResponse(
+                            onTap: () {
+                              Navigator.pushNamed(context, '/chat');
+                            },
+                            child: Container(
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage('assets/logo.jpg'),
+                                  ),
+                                  FittedBox(
+                                    child: Text(
+                                      'Gulf',
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                      ),
                                     ),
-                                  ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage:
+                                      AssetImage('assets/logo.jpg'),
                                 ),
-                                Text(
-                                  'Gulf',
-                                  style: TextStyle(
-                                    fontSize: 11,
+                                FittedBox(
+                                  child: Text(
+                                    'Gulf',
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          onTap: () {
-                            Navigator.pushNamed(context, '/homework');
-                          },
-                        ),
-                        Container(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundImage:
-                                        AssetImage('assets/logo.jpg'),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                'Gulf',
-                                style: TextStyle(
-                                  fontSize: 11,
-                                ),
-                              ),
-                            ],
+                          SizedBox(
+                            width: 20,
                           ),
-                        ),
-                        Container(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundImage:
-                                        AssetImage('assets/logo.jpg'),
-                                  ),
-                                ],
-                              ),
-                              Text(
-                                'Gulf',
-                                style: TextStyle(
-                                  fontSize: 11,
+                          Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage:
+                                      AssetImage('assets/logo.jpg'),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundImage:
-                                        AssetImage('assets/logo.jpg'),
+                                FittedBox(
+                                  child: Text(
+                                    'Gulf',
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                    ),
                                   ),
-                                ],
-                              ),
-                              Text(
-                                'Gulf',
-                                style: TextStyle(
-                                  fontSize: 11,
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Container(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundImage:
-                                        AssetImage('assets/logo.jpg'),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage:
+                                      AssetImage('assets/logo.jpg'),
+                                ),
+                                FittedBox(
+                                  child: Text(
+                                    'Gulf',
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                    ),
                                   ),
-                                ],
-                              ),
-                              Text(
-                                'Gulf',
-                                style: TextStyle(
-                                  fontSize: 11,
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage:
+                                      AssetImage('assets/logo.jpg'),
+                                ),
+                                FittedBox(
+                                  child: Text(
+                                    'Gulf',
+                                    style: TextStyle(
+                                      fontSize: 11,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -210,17 +218,17 @@ class _ClassMatesState extends State<ClassMates> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(
                 children: [
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Flexible(
+                  InkResponse(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/chat');
+                    },
+                    child: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
                             CircleAvatar(
@@ -231,55 +239,61 @@ class _ClassMatesState extends State<ClassMates> {
                             ),
                             Column(
                               children: [
-                                Flexible(
-                                  child: Row(
-                                    children: [
-                                      FittedBox(
-                                        child: Text(
-                                          'Gulf Doe',
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                            color: const Color(0xff000000),
-                                          ),
+                                Row(
+                                  children: [
+                                    FittedBox(
+                                      child: Text(
+                                        'Gulf Doe',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: const Color(0xff000000),
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    'Hi! How are you?',
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                      color: const Color(0xffa9b9c5),
+                                Flexible(
+                                  child: Align(
+                                    alignment: Alignment.topLeft,
+                                    child: FittedBox(
+                                      child: Text(
+                                        'Hi! How are you?',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: const Color(0xffa9b9c5),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
                               ],
                             ),
                             Spacer(),
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: Text(
-                                '6 Tue, 3:45 pm',
-                                style: TextStyle(
-                                  fontSize: 9,
-                                  fontWeight: FontWeight.w300,
+                            Flexible(
+                              child: Align(
+                                alignment: Alignment.topRight,
+                                child: FittedBox(
+                                  child: Text(
+                                    '6 Tue, 3:45 pm',
+                                    style: TextStyle(
+                                      fontSize: 9,
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
                           ],
                         ),
                       ),
-                    ),
-                    width: 391.0,
-                    height: 61.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                      color: const Color(0xffffffff),
-                      border: Border.all(
-                          width: 1.0, color: const Color(0xffa9b9c5)),
+                      width: 391.0,
+                      height: 61.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4.0),
+                        color: const Color(0xffffffff),
+                        border: Border.all(
+                            width: 1.0, color: const Color(0xffa9b9c5)),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -288,57 +302,57 @@ class _ClassMatesState extends State<ClassMates> {
                   Container(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Flexible(
-                        child: Row(
-                          children: [
-                            CircleAvatar(
-                              backgroundImage: AssetImage('assets/logo.jpg'),
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Column(
-                              children: [
-                                Flexible(
-                                  child: Row(
-                                    children: [
-                                      FittedBox(
-                                        child: Text(
-                                          'Gulf Doe',
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                            color: const Color(0xff000000),
-                                          ),
-                                        ),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage: AssetImage('assets/logo.jpg'),
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  FittedBox(
+                                    child: Text(
+                                      'Gulf Doe',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: const Color(0xff000000),
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                                Align(
+                                ],
+                              ),
+                              Flexible(
+                                child: Align(
                                   alignment: Alignment.topLeft,
-                                  child: Text(
-                                    'Hi! How are you?',
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                      color: const Color(0xffa9b9c5),
+                                  child: FittedBox(
+                                    child: Text(
+                                      'Hi! How are you?',
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        color: const Color(0xffa9b9c5),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
-                            Spacer(),
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: Text(
-                                '6 Tue, 3:45 pm',
-                                style: TextStyle(
-                                  fontSize: 9,
-                                  fontWeight: FontWeight.w300,
-                                ),
+                              ),
+                            ],
+                          ),
+                          Spacer(),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              '6 Tue, 3:45 pm',
+                              style: TextStyle(
+                                fontSize: 9,
+                                fontWeight: FontWeight.w300,
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                     width: 391.0,

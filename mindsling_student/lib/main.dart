@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindsling_student/bottomNavigationBar.dart';
+import 'package:mindsling_student/bottomAppBar.dart';
 import 'package:mindsling_student/pages/BottomNavbarPages/More_Pages/Live_Sessions/livesession.dart';
 import 'package:mindsling_student/pages/BottomNavbarPages/More_Pages/more.dart';
 import 'package:mindsling_student/pages/BottomNavbarPages/More_Pages/privacyPolicy.dart';
@@ -34,7 +35,7 @@ void main() => runApp(LayoutBuilder(
             SizeConfig().init(constraints, orientation);
             return MaterialApp(
               theme: ThemeData(fontFamily: 'Poppins'),
-              initialRoute: '/chat',
+              initialRoute: '/',
               routes: {
                 '/': (context) => Login(),
                 '/signup': (context) => SignUp(),

@@ -43,28 +43,28 @@ class _LoginState extends State<Login> {
                   children: [
                     Container(
                       child: TextField(
-                        textAlignVertical: TextAlignVertical.bottom,
+                        textAlignVertical: TextAlignVertical.center,
                         decoration: InputDecoration(
                           contentPadding:
                               EdgeInsets.all(1 * SizeConfig.heightMultiplier),
                           prefixIcon: Icon(
-                            FontAwesomeIcons.userGraduate,
+                            Icons.mail,
                             color: Colors.teal[400],
                           ),
-                          hintText: 'School ID',
+                          hintText: 'E-mail',
                         ),
                       ),
                     ),
                     SizedBox(height: 6 * SizeConfig.heightMultiplier),
                     Container(
                       child: TextField(
-                        textAlignVertical: TextAlignVertical.bottom,
+                        textAlignVertical: TextAlignVertical.center,
                         decoration: InputDecoration(
                           contentPadding:
                               EdgeInsets.all(1 * SizeConfig.heightMultiplier),
-                          prefixIcon: Icon(
-                            FontAwesomeIcons.userLock,
-                            color: Colors.teal[400],
+                          prefixIcon: ImageIcon(
+                            AssetImage('assets/icons/password.png'),
+                            color: AppTheme.iconColor,
                           ),
                           hintText: 'Password',
                         ),
@@ -84,13 +84,13 @@ class _LoginState extends State<Login> {
                     },
                   ),
                 ),
-                SizedBox(height: 6 * SizeConfig.heightMultiplier),
+                SizedBox(height: 8 * SizeConfig.heightMultiplier),
                 ButtonTheme(
                   minWidth: MediaQuery.of(context).size.width,
-                  height: 5.7 * SizeConfig.heightMultiplier,
+                  height: 8 * SizeConfig.heightMultiplier,
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
+                      borderRadius: BorderRadius.circular(25.0),
                     ),
                     onPressed: () {
                       Navigator.pushReplacementNamed(context, '/bottomBar');
@@ -102,17 +102,23 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20 * SizeConfig.heightMultiplier),
+                SizedBox(height: 10 * SizeConfig.heightMultiplier),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don't have an account? "),
+                    Text(
+                      "Don't have an account? ",
+                      style: TextStyle(
+                        fontSize: 2.4 * SizeConfig.textMultiplier,
+                      ),
+                    ),
                     InkWell(
                       child: Text(
                         'Signup',
                         style: TextStyle(
                           decoration: TextDecoration.underline,
                           color: Colors.teal[200],
+                          fontSize: 2.4 * SizeConfig.textMultiplier,
                         ),
                       ),
                       onTap: () {

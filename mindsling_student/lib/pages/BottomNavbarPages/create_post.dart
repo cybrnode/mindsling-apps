@@ -11,6 +11,7 @@ class _CreatePostState extends State<CreatePost> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: PreferredSize(
         child: Container(
           decoration: BoxDecoration(
@@ -57,142 +58,136 @@ class _CreatePostState extends State<CreatePost> {
         ),
         preferredSize: Size.fromHeight(kToolbarHeight),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            // SizedBox(
-            //   height: 30,
-            // ),
-            Container(
-              height: SizeConfig.heightMultiplier * 10,
-              child: TextField(
-                textAlignVertical: TextAlignVertical.top,
-                expands: true,
-                maxLines: null,
-                decoration: InputDecoration(
-                  // border: OutlineInputBorder(
-                  //   // borderRadius: BorderRadius.circular(3),
-                  // ),
-                  contentPadding: const EdgeInsets.all(20.0),
-                  hintText: "What's on your mind?",
-                  hintStyle: TextStyle(
-                    fontSize: 18.0,
-                    color: const Color(0xffa9b9c5),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 254, // width: MediaQuery.of(context).size.width,
-              child: TextField(
-                textAlignVertical: TextAlignVertical.top,
-                expands: true,
-                maxLines: null,
-                decoration: InputDecoration(
-                  // border: OutlineInputBorder(
-                  //   // borderRadius: BorderRadius.circular(3),
-                  // ),
-                  contentPadding: const EdgeInsets.all(20.0),
-                  hintText: 'Description',
-                  hintStyle: TextStyle(
-                    fontSize: 18.0,
-                    color: const Color(0xffa9b9c5),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 5 * SizeConfig.heightMultiplier),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+      body: Column(
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Expanded(
+            child: ListView(
+              // reverse: true,
+              shrinkWrap: true,
               children: [
-                Flexible(
-                  flex: 4,
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 30,
-                              // backgroundImage:
-                              //     AssetImage('assets/classes-02.png'),
-                              // backgroundColor: Colors.white,
-                              child: Icon(
-                                FontAwesomeIcons.portrait,
-                                color: Colors.teal,
-                              ),
-                              backgroundColor: Colors.teal[100],
-                            ),
-                            // backgroundColor: Colors.teal[100],
-                          ],
-                        ),
-                        FittedBox(child: Text("Upload Picture")),
-                      ],
-                    ),
-                    width: 114.0,
-                    height: 114.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      color: const Color(0xffffffff),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(1.0),
-                          offset: Offset(0, 3),
-                          blurRadius: 9,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Spacer(),
-                Flexible(
-                  flex: 4,
-                  child: Container(
-                    child: Flexible(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Column(
-                            children: [
-                              CircleAvatar(
-                                radius: 30,
-                                // backgroundImage:
-                                //     AssetImage('assets/classes-02.png'),
-                                // backgroundColor: Colors.white,
-                                child: Icon(
-                                  FontAwesomeIcons.video,
-                                  color: Colors.teal,
-                                ),
-                                backgroundColor: Colors.teal[100],
-                              ),
-                              // backgroundColor: Colors.teal[100],
-                            ],
-                          ),
-                          FittedBox(child: Text("Upload Video")),
-                        ],
+                Container(
+                  height: SizeConfig.heightMultiplier * 10,
+                  child: TextField(
+                    textAlignVertical: TextAlignVertical.top,
+                    expands: true,
+                    maxLines: null,
+                    autofocus: true,
+                    decoration: InputDecoration(
+                      // border: OutlineInputBorder(
+                      //   // borderRadius: BorderRadius.circular(3),
+                      // ),
+                      contentPadding: const EdgeInsets.all(20.0),
+                      hintText: "What's on your mind?",
+
+                      hintStyle: TextStyle(
+                        fontSize: 18.0,
+                        color: const Color(0xffa9b9c5),
                       ),
                     ),
-                    width: 114.0,
-                    height: 114.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      color: const Color(0xffffffff),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(1.0),
-                          offset: Offset(0, 3),
-                          blurRadius: 9,
-                        ),
-                      ],
+                  ),
+                ),
+                Container(
+                  height: 254, // width: MediaQuery.of(context).size.width,
+                  child: TextField(
+                    textAlignVertical: TextAlignVertical.top,
+                    expands: true,
+                    maxLines: null,
+                    autofocus: true,
+                    decoration: InputDecoration(
+                      // border: OutlineInputBorder(
+                      //   // borderRadius: BorderRadius.circular(3),
+                      // ),
+                      contentPadding: const EdgeInsets.all(20.0),
+                      hintText: 'Description',
+                      hintStyle: TextStyle(
+                        fontSize: 18.0,
+                        color: const Color(0xffa9b9c5),
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+          SizedBox(height: 5 * SizeConfig.heightMultiplier),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundColor: Colors.white,
+                          child: Image.asset(
+                              'assets/icons/Icon metro-file-picture.png'),
+                        ),
+
+                        // backgroundColor: Colors.teal[100],
+                      ],
+                    ),
+                    FittedBox(child: Text("Upload Picture")),
+                  ],
+                ),
+                width: 40.0 * SizeConfig.widthMultiplier,
+                height: 20.0 * SizeConfig.heightMultiplier,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  color: const Color(0xffffffff),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(1.0),
+                      offset: Offset(0, 3),
+                      blurRadius: 9,
+                    ),
+                  ],
+                ),
+              ),
+              Spacer(),
+              Flexible(
+                flex: 4,
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: [
+                          CircleAvatar(
+                            radius: 30,
+                            backgroundColor: Colors.white,
+                            child: Image.asset(
+                                'assets/icons/Icon feather-video.png'),
+                          ),
+                        ],
+                      ),
+                      FittedBox(child: Text("Upload Video")),
+                    ],
+                  ),
+                  width: 40.0 * SizeConfig.widthMultiplier,
+                  height: 20.0 * SizeConfig.heightMultiplier,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    color: const Color(0xffffffff),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(1.0),
+                        offset: Offset(0, 3),
+                        blurRadius: 9,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 5 * SizeConfig.heightMultiplier,
+          )
+        ],
       ),
     );
   }

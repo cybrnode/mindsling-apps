@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/size_config.dart';
+import 'package:mindsling_student/styling.dart';
 
 class ResetPassword extends StatefulWidget {
   @override
@@ -23,23 +25,21 @@ class _ResetPasswordState extends State<ResetPassword> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(35.0),
+          padding: const EdgeInsets.all(25.0),
           child: Column(
             children: <Widget>[
               Container(
-                height: MediaQuery.of(context).size.height / 8,
-                width: MediaQuery.of(context).size.width,
-                child: Image(
-                  image: AssetImage("assets/logo.jpg"),
-                ),
+                // height: MediaQuery.of(context).size.height / 8,
+                // width: MediaQuery.of(context).size.width,
+                child: Image.asset("assets/icons/NoPath - Copy (-4.png"),
               ),
               SizedBox(height: 30),
               Container(
                 child: Text(
                   'Reset your Password',
                   style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.teal[400],
+                    fontSize: 4 * SizeConfig.textMultiplier,
+                    color: AppTheme.appBackgroundColor,
                   ),
                 ),
               ),
@@ -52,9 +52,9 @@ class _ResetPasswordState extends State<ResetPassword> {
                       textAlignVertical: TextAlignVertical.bottom,
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.all(10),
-                        prefixIcon: Icon(
-                          Icons.email,
-                          color: Colors.teal[400],
+                        prefixIcon: ImageIcon(
+                          AssetImage('assets/icons/password.png'),
+                          color: AppTheme.iconColor,
                         ),
                         hintText: 'New Password',
                       ),
@@ -66,9 +66,9 @@ class _ResetPasswordState extends State<ResetPassword> {
                       textAlignVertical: TextAlignVertical.bottom,
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.all(10),
-                        prefixIcon: Icon(
-                          FontAwesomeIcons.userLock,
-                          color: Colors.teal[400],
+                        prefixIcon: ImageIcon(
+                          AssetImage('assets/icons/password.png'),
+                          color: AppTheme.iconColor,
                         ),
                         hintText: ' Confirm Password',
                       ),
@@ -76,10 +76,11 @@ class _ResetPasswordState extends State<ResetPassword> {
                   ),
                 ],
               ),
-              Container(
-                height: MediaQuery.of(context).size.height / 7,
-                width: MediaQuery.of(context).size.width,
-              ),
+              SizedBox(height: 30),
+              // Container(
+              //   height: MediaQuery.of(context).size.height / 7,
+              //   width: MediaQuery.of(context).size.width,
+              // ),
               ButtonTheme(
                 minWidth: MediaQuery.of(context).size.width,
                 height: 47.0,
@@ -88,7 +89,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                     borderRadius: BorderRadius.circular(18.0),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/resetPassword');
+                    Navigator.pop(context);
                   },
                   color: Colors.teal[400],
                   child: Text(

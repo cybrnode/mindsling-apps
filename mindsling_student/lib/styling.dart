@@ -58,7 +58,21 @@ abstract class AppTheme {
       ),
     ],
   );
-
+  static final BoxDecoration boxShadow = BoxDecoration(
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.2),
+        blurRadius: 2,
+        offset: Offset(0, 3),
+      ),
+    ],
+  );
+  static final BoxShadow boxShadow2 = BoxShadow(
+    color: Colors.grey.withOpacity(0.2),
+    spreadRadius: 1,
+    blurRadius: 7,
+    offset: Offset(0, 6),
+  );
   static final TextStyle loginText = TextStyle(
     fontSize: 3.15 * SizeConfig.textMultiplier,
     color: const Color(0xff000000),
@@ -84,6 +98,11 @@ abstract class AppTheme {
     color: const Color(0xff000000),
     fontWeight: FontWeight.w500,
   );
+  static final TextStyle homeworkText = TextStyle(
+    fontSize: 2.42 * SizeConfig.textMultiplier,
+    color: const Color(0xff000000),
+    fontWeight: FontWeight.w500,
+  );
   static final TextStyle subHeadText = TextStyle(
     fontSize: 2.42 * SizeConfig.textMultiplier,
     color: subTextColor,
@@ -102,13 +121,18 @@ abstract class AppTheme {
   );
 
   static final TextStyle homeCardText = TextStyle(
-    fontSize: 2.4 * SizeConfig.textMultiplier,
+    fontSize: 3.5 * SizeConfig.textMultiplier,
+    color: const Color(0xff000000),
+    fontWeight: FontWeight.w700,
+  );
+  static final TextStyle profileCardText = TextStyle(
+    fontSize: 3 * SizeConfig.textMultiplier,
     color: const Color(0xff000000),
     fontWeight: FontWeight.w700,
   );
 
   static final TextStyle homeCardsubText = TextStyle(
-    fontSize: 2.4 * SizeConfig.textMultiplier,
+    fontSize: 3 * SizeConfig.textMultiplier,
     color: subTextColor,
   );
   static final TextStyle vidCardText = TextStyle(
@@ -134,11 +158,17 @@ abstract class AppTheme {
   static final TextStyle eventTitle = TextStyle(
     fontSize: 2.4 * SizeConfig.textMultiplier,
     color: Colors.white,
+    fontWeight: FontWeight.w100,
   );
   static final TextStyle eventText = TextStyle(
     fontFamily: 'Poppins',
     fontSize: 1.5 * SizeConfig.textMultiplier,
     color: Colors.white,
+  );
+  static final TextStyle chatRowText = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 1.85 * SizeConfig.textMultiplier,
+    color: Colors.black,
   );
 
   static final TextStyle chatText = TextStyle(
@@ -160,6 +190,11 @@ abstract class AppTheme {
   static final TextStyle chatMenuText = TextStyle(
     fontSize: 2 * SizeConfig.textMultiplier,
     color: const Color(0xff01a89e),
+    fontWeight: FontWeight.w700,
+  );
+  static final TextStyle bullet = TextStyle(
+    fontSize: 8 * SizeConfig.textMultiplier,
+    color: appBackgroundColor,
     fontWeight: FontWeight.w700,
   );
 }

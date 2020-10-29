@@ -48,7 +48,7 @@ class _NotificationsState extends State<Notifications> {
                     SizedBox(height: 2 * SizeConfig.heightMultiplier),
                     Container(
                       width: 100.0 * SizeConfig.widthMultiplier,
-                      height: 9.0 * SizeConfig.heightMultiplier,
+                      height: 10.0 * SizeConfig.heightMultiplier,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8.0),
                         color: const Color(0xffffffff),

@@ -26,7 +26,9 @@ class _LiveSessionsState extends State<LiveSessions> {
         actions: <Widget>[
           IconButton(
             icon: Icon(FontAwesomeIcons.bell),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/notifications');
+            },
           ),
         ],
       ),
@@ -51,84 +53,94 @@ class _LiveSessionsState extends State<LiveSessions> {
                       ),
                     ),
                     SizedBox(height: 3 * SizeConfig.heightMultiplier),
-                    Container(
-                      width: 100.0 * SizeConfig.widthMultiplier,
-                      height: 10.0 * SizeConfig.heightMultiplier,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        color: const Color(0xffffffff),
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0x29000000),
-                            offset: Offset(0, 3),
-                            blurRadius: 6,
-                          ),
-                        ],
-                      ),
+                    InkResponse(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/meetingdetails');
+                      },
                       child: Container(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            // crossAxisAlignment: CrossAxisAlignment.sta,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            // mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Flexible(
-                                child: Row(
+                        width: 100.0 * SizeConfig.widthMultiplier,
+                        height: 10.0 * SizeConfig.heightMultiplier,
+                        decoration: BoxDecoration(
+                          border: Border(
+                            left: BorderSide(
+                                width: 5.0, color: AppTheme.appBackgroundColor),
+                          ),
+                          // borderRadius: BorderRadius.circular(8.0),
+                          color: const Color(0xffffffff),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0x29000000),
+                              offset: Offset(0, 3),
+                              blurRadius: 6,
+                            ),
+                          ],
+                        ),
+                        child: Container(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              // crossAxisAlignment: CrossAxisAlignment.sta,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              // mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Flexible(
+                                  child: Row(
+                                    children: [
+                                      Container(),
+                                      FittedBox(
+                                        child: Text(
+                                          'Parent Teacher Meeting',
+                                          style: AppTheme.headerText2,
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      FittedBox(
+                                        child: Text(
+                                          '23-07-2020',
+                                          style: TextStyle(
+                                              color: Colors.grey[400],
+                                              fontSize: 12),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                // SizedBox(height: 10),
+                                Row(
                                   children: [
-                                    FittedBox(
-                                      child: Text(
-                                        'Parent Teacher Meeting',
-                                        style: AppTheme.headerText2,
+                                    // Spacer(),
+                                    Flexible(
+                                      flex: 3,
+                                      child: FittedBox(
+                                        child: Text(
+                                            'You requested a meeting with Norma Alex teacher',
+                                            style: AppTheme.notifSubText
+                                            // textAlign: TextAlign.left,
+                                            ),
                                       ),
                                     ),
-                                    Spacer(),
-                                    FittedBox(
-                                      child: Text(
-                                        '23-07-2020',
-                                        style: TextStyle(
-                                            color: Colors.grey[400],
-                                            fontSize: 12),
-                                      ),
-                                    ),
+
+                                    // Spacer(),
                                   ],
                                 ),
-                              ),
-                              // SizedBox(height: 10),
-                              Row(
-                                children: [
-                                  // Spacer(),
-                                  Flexible(
-                                    flex: 3,
-                                    child: FittedBox(
+
+                                Row(
+                                  children: [
+                                    // Spacer(),
+                                    Flexible(
+                                      flex: 2,
                                       child: Text(
-                                          'You requested a meeting with Norma Alex teacher',
-                                          style: AppTheme.notifSubText
-                                          // textAlign: TextAlign.left,
-                                          ),
+                                        'Requested Time: Today at 6pm',
+                                        style: AppTheme.shortNotifSubText,
+                                        // textAlign: TextAlign.,
+                                      ),
                                     ),
-                                  ),
 
-                                  // Spacer(),
-                                ],
-                              ),
-
-                              Row(
-                                children: [
-                                  // Spacer(),
-                                  Flexible(
-                                    flex: 2,
-                                    child: Text(
-                                      'Requested Time: Today at 6pm',
-                                      style: AppTheme.shortNotifSubText,
-                                      // textAlign: TextAlign.,
-                                    ),
-                                  ),
-
-                                  // Spacer(),
-                                ],
-                              ),
-                            ],
+                                    // Spacer(),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
