@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
                 SizedBox(height: 8 * SizeConfig.heightMultiplier),
                 ButtonTheme(
                   minWidth: MediaQuery.of(context).size.width,
-                  height: 8 * SizeConfig.heightMultiplier,
+                  height: 7 * SizeConfig.heightMultiplier,
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(25.0),
@@ -106,19 +106,23 @@ class _LoginState extends State<Login> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "Don't have an account? ",
-                      style: TextStyle(
-                        fontSize: 2.4 * SizeConfig.textMultiplier,
+                    FittedBox(
+                      child: Text(
+                        "Don't have an account? ",
+                        style: TextStyle(
+                          fontSize: 1.7 * SizeConfig.textMultiplier,
+                        ),
                       ),
                     ),
                     InkWell(
-                      child: Text(
-                        'Signup',
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          color: Colors.teal[200],
-                          fontSize: 2.4 * SizeConfig.textMultiplier,
+                      child: FittedBox(
+                        child: Text(
+                          'Signup',
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Colors.teal[200],
+                            fontSize: 1.7 * SizeConfig.textMultiplier,
+                          ),
                         ),
                       ),
                       onTap: () {

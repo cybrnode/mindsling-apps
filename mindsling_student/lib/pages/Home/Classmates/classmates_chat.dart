@@ -304,6 +304,9 @@ class _ChatState extends State<Chat> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 4 * SizeConfig.heightMultiplier,
+                      ),
                       Row(
                         children: [
                           Spacer(flex: 2),

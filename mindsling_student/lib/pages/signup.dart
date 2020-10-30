@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/backend/student.dart';
 import 'package:mindsling_student/size_config.dart';
 import 'package:mindsling_student/styling.dart';
 
@@ -9,6 +10,14 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  String _name;
+  String _email;
+  String _className;
+  String _school;
+  String _rollNumber;
+  String _password;
+  String _profilePicture;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +57,9 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(height: 3 * SizeConfig.heightMultiplier),
                 Container(
                   child: TextField(
+                    onChanged: (String name) {
+                      this._name = name;
+                    },
                     textAlignVertical: TextAlignVertical.bottom,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(10),
@@ -65,6 +77,9 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(height: 20.0),
                 Container(
                   child: TextField(
+                    onChanged: (String rollNumber) {
+                      this._rollNumber = rollNumber;
+                    },
                     textAlignVertical: TextAlignVertical.bottom,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(10),
@@ -82,6 +97,9 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(height: 20.0),
                 Container(
                   child: TextField(
+                    onChanged: (String className) {
+                      this._className = className;
+                    },
                     textAlignVertical: TextAlignVertical.bottom,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(10),
@@ -99,6 +117,9 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(height: 20.0),
                 Container(
                   child: TextField(
+                    onChanged: (String email) {
+                      this._email = email;
+                    },
                     textAlignVertical: TextAlignVertical.bottom,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(10),
@@ -116,6 +137,9 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(height: 20.0),
                 Container(
                   child: TextField(
+                    onChanged: (String password) {
+                      this._password = password;
+                    },
                     textAlignVertical: TextAlignVertical.bottom,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(10),
@@ -141,7 +165,17 @@ class _SignUpState extends State<SignUp> {
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/home');
+                      if (this._email == "" || this._email == null) {}
+
+                      Student s1 = new Student(
+                        name: this._name,
+                        className: this._className,
+                        rollNumber: this._rollNumber,
+                        password: this._password,
+                        email: this._email,
+                      );
+                      s1.register();
+                      // Navigator.pushNamed(context, '/home');
                     },
                     color: Colors.teal[400],
                     child: Text(

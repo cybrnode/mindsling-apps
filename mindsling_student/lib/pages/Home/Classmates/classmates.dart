@@ -70,6 +70,7 @@ class _ClassMatesState extends State<ClassMates> {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   CircleAvatar(
+                                    minRadius: 25,
                                     backgroundImage:
                                         AssetImage('assets/logo.jpg'),
                                   ),
@@ -93,6 +94,7 @@ class _ClassMatesState extends State<ClassMates> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 CircleAvatar(
+                                  minRadius: 25,
                                   backgroundImage:
                                       AssetImage('assets/logo.jpg'),
                                 ),
@@ -115,6 +117,7 @@ class _ClassMatesState extends State<ClassMates> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 CircleAvatar(
+                                  minRadius: 25,
                                   backgroundImage:
                                       AssetImage('assets/logo.jpg'),
                                 ),
@@ -137,6 +140,7 @@ class _ClassMatesState extends State<ClassMates> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 CircleAvatar(
+                                  minRadius: 25,
                                   backgroundImage:
                                       AssetImage('assets/logo.jpg'),
                                 ),
@@ -159,6 +163,7 @@ class _ClassMatesState extends State<ClassMates> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 CircleAvatar(
+                                  minRadius: 25,
                                   backgroundImage:
                                       AssetImage('assets/logo.jpg'),
                                 ),

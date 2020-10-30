@@ -160,8 +160,8 @@ class _UpdateProfileState extends State<UpdateProfile> {
                   SizedBox(height: 3 * SizeConfig.heightMultiplier),
                   Container(
                     child: ButtonTheme(
-                      minWidth: 280.0,
-                      height: 47.0,
+                      minWidth: MediaQuery.of(context).size.width,
+                      height: 7 * SizeConfig.heightMultiplier,
                       child: RaisedButton(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
