@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:mindsling_student/utils.dart' as utils;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Student {
   String name;
@@ -12,6 +13,8 @@ class Student {
   String password;
   String profilePicture;
 
+  final String authToken = "auth_token";
+
   Student({
     this.name,
     this.email,
@@ -20,6 +23,22 @@ class Student {
     this.rollNumber,
     this.password,
   });
+
+  Future<String> login() async {
+    http.Response response = await http.post(
+      '${utils.HOST_NAME}${utils.STUDENT_SERVICE}/login',
+      headers: utils.HEADERS,
+      body: jsonEncode({
+        "email": this.email,
+        'password': this.password,
+      }),
+    );
+    if (response.statusCode == 200) {
+      return response.body;
+    } else {
+      return Future.error(jsonDecode(response.body)["message"]);
+    }
+  }
 
   Future<String> register() async {
     http.Response response = await http.post(

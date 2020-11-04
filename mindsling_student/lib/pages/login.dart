@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mindsling_student/bottomNavigationBar.dart';
+import 'package:mindsling_student/pages/Home/home.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:mindsling_student/backend/student.dart';
 import 'package:mindsling_student/size_config.dart';
 import 'package:mindsling_student/styling.dart';
 
@@ -9,6 +13,10 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final _formKey = GlobalKey<FormState>();
+  String _email;
+  String _password;
+  String _error;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,39 +46,61 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 SizedBox(height: 3.64 * SizeConfig.heightMultiplier),
-                Column(
-                  // mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      child: TextField(
-                        textAlignVertical: TextAlignVertical.center,
-                        decoration: InputDecoration(
-                          contentPadding:
-                              EdgeInsets.all(1 * SizeConfig.heightMultiplier),
-                          prefixIcon: Icon(
-                            Icons.mail,
-                            color: Colors.teal[400],
+                Form(
+                  key: _formKey,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  child: Column(
+                    // mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        child: TextFormField(
+                          onChanged: (String email) {
+                            this._email = email;
+                          },
+                          textAlignVertical: TextAlignVertical.center,
+                          decoration: InputDecoration(
+                            contentPadding:
+                                EdgeInsets.all(1 * SizeConfig.heightMultiplier),
+                            prefixIcon: Icon(
+                              Icons.mail,
+                              color: Colors.teal[400],
+                            ),
+                            hintText: 'E-mail',
                           ),
-                          hintText: 'E-mail',
+                          validator: (email) {
+                            if (!validateEmail(email) || email.isEmpty)
+                              return 'Please enter a valid email address';
+                            else
+                              return null;
+                          },
                         ),
                       ),
-                    ),
-                    SizedBox(height: 6 * SizeConfig.heightMultiplier),
-                    Container(
-                      child: TextField(
-                        textAlignVertical: TextAlignVertical.center,
-                        decoration: InputDecoration(
-                          contentPadding:
-                              EdgeInsets.all(1 * SizeConfig.heightMultiplier),
-                          prefixIcon: ImageIcon(
-                            AssetImage('assets/icons/password.png'),
-                            color: AppTheme.iconColor,
+                      SizedBox(height: 6 * SizeConfig.heightMultiplier),
+                      Container(
+                        child: TextFormField(
+                          onChanged: (String password) {
+                            this._password = password;
+                          },
+                          textAlignVertical: TextAlignVertical.center,
+                          decoration: InputDecoration(
+                            contentPadding:
+                                EdgeInsets.all(1 * SizeConfig.heightMultiplier),
+                            prefixIcon: ImageIcon(
+                              AssetImage('assets/icons/password.png'),
+                              color: AppTheme.iconColor,
+                            ),
+                            hintText: 'Password',
                           ),
-                          hintText: 'Password',
+                          validator: (password) {
+                            if (password.isEmpty)
+                              return 'Please enter your password';
+                            else
+                              return null;
+                          },
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 SizedBox(height: 2.4 * SizeConfig.heightMultiplier),
                 Align(
@@ -93,7 +123,24 @@ class _LoginState extends State<Login> {
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/bottomBar');
+                      Student s1 = new Student(
+                        password: this._password,
+                        email: this._email,
+                      );
+                      s1.login().then((String token) async {
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        prefs.setString('token', token);
+
+                        Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    BottomNavBar()),
+                            (Route<dynamic> route) => false);
+                      }).catchError((e) {
+                        _error = e;
+                        alertMsg(context);
+                      });
                     },
                     color: Colors.teal[400],
                     child: Text(
@@ -137,5 +184,27 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+  }
+
+  bool validateEmail(String value) {
+    Pattern pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regex = new RegExp(pattern);
+    return (!regex.hasMatch(value)) ? false : true;
+  }
+
+  void alertMsg(BuildContext context) {
+    var alertDialog = AlertDialog(
+      title: Text("Login Failed"),
+      content: Text(
+        _error,
+        maxLines: 3,
+      ),
+    );
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alertDialog;
+        });
   }
 }

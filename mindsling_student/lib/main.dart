@@ -12,6 +12,7 @@ import 'package:mindsling_student/pages/BottomNavbarPages/create_post.dart';
 import 'package:mindsling_student/pages/Home/Classes/classes.dart';
 import 'package:mindsling_student/pages/Home/Classmates/classmates.dart';
 import 'package:mindsling_student/pages/Home/Classmates/classmates_chat.dart';
+import 'package:mindsling_student/pages/Home/Event/create_event.dart';
 import 'package:mindsling_student/pages/Home/HomeWork/homework_detail.dart';
 import 'package:mindsling_student/pages/Home/VideoLectures/videolectures.dart';
 import 'package:mindsling_student/pages/Home/Event/event.dart';
@@ -52,6 +53,7 @@ void main() => runApp(LayoutBuilder(
                 '/events': (context) => Events(),
                 '/tutor': (context) => Tutor(),
                 '/create_post': (context) => CreatePost(),
+                '/create_event': (context) => CreateEvent(),
                 '/profile': (context) => UpdateProfile(),
                 '/more': (context) => MorePages(),
                 '/classmates': (context) => ClassMates(),

@@ -10,6 +10,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final _formKey = GlobalKey<FormState>();
   String _name;
   String _email;
   String _className;
@@ -55,103 +56,142 @@ class _SignUpState extends State<SignUp> {
                   style: TextStyle(fontSize: 2.64 * SizeConfig.textMultiplier),
                 ),
                 SizedBox(height: 3 * SizeConfig.heightMultiplier),
-                Container(
-                  child: TextField(
-                    onChanged: (String name) {
-                      this._name = name;
-                    },
-                    textAlignVertical: TextAlignVertical.bottom,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(10),
-                      prefixIcon: Icon(
-                        FontAwesomeIcons.userGraduate,
-                        color: Colors.teal[400],
+                Form(
+                  key: _formKey,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  child: Column(
+                    children: [
+                      Container(
+                        child: TextFormField(
+                          onChanged: (String name) {
+                            this._name = name;
+                          },
+                          textAlignVertical: TextAlignVertical.bottom,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.all(10),
+                            prefixIcon: Icon(
+                              FontAwesomeIcons.userGraduate,
+                              color: Colors.teal[400],
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.teal[400]),
+                            ),
+                            hintText: 'Name',
+                          ),
+                          validator: (name) {
+                            if (name.isEmpty)
+                              return 'Please enter your name.';
+                            else
+                              return null;
+                          },
+                        ),
                       ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.teal[400]),
+                      SizedBox(height: 20.0),
+                      Container(
+                        child: TextFormField(
+                          onChanged: (String rollNumber) {
+                            this._rollNumber = rollNumber;
+                          },
+                          textAlignVertical: TextAlignVertical.bottom,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.all(10),
+                            prefixIcon: ImageIcon(
+                              AssetImage('assets/icons/Group 623.png'),
+                              color: AppTheme.iconColor,
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.teal[400]),
+                            ),
+                            hintText: 'Roll Number',
+                          ),
+                          validator: (rollNumber) {
+                            if (rollNumber.isEmpty)
+                              return 'Please enter your roll number.';
+                            else
+                              return null;
+                          },
+                        ),
                       ),
-                      hintText: 'Name',
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20.0),
-                Container(
-                  child: TextField(
-                    onChanged: (String rollNumber) {
-                      this._rollNumber = rollNumber;
-                    },
-                    textAlignVertical: TextAlignVertical.bottom,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(10),
-                      prefixIcon: ImageIcon(
-                        AssetImage('assets/icons/Group 623.png'),
-                        color: AppTheme.iconColor,
+                      SizedBox(height: 20.0),
+                      Container(
+                        child: TextFormField(
+                          onChanged: (String className) {
+                            this._className = className;
+                          },
+                          textAlignVertical: TextAlignVertical.bottom,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.all(10),
+                            prefixIcon: ImageIcon(
+                              AssetImage(
+                                  'assets/icons/Icon awesome-building.png'),
+                              color: Colors.teal[400],
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.teal[400]),
+                            ),
+                            hintText: 'Class name',
+                          ),
+                          validator: (className) {
+                            if (className.isEmpty)
+                              return 'Please enter your class with section.';
+                            else
+                              return null;
+                          },
+                        ),
                       ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.teal[400]),
+                      SizedBox(height: 20.0),
+                      Container(
+                        child: TextFormField(
+                          onChanged: (String email) {
+                            this._email = email;
+                          },
+                          textAlignVertical: TextAlignVertical.bottom,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.all(10),
+                            prefixIcon: Icon(
+                              Icons.email,
+                              color: Colors.teal[400],
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.teal[400]),
+                            ),
+                            hintText: 'Email',
+                          ),
+                          validator: (email) {
+                            if (!validateEmail(email) || email.isEmpty)
+                              return 'Please enter a valid email address';
+                            else
+                              return null;
+                          },
+                        ),
                       ),
-                      hintText: 'Roll Number',
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20.0),
-                Container(
-                  child: TextField(
-                    onChanged: (String className) {
-                      this._className = className;
-                    },
-                    textAlignVertical: TextAlignVertical.bottom,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(10),
-                      prefixIcon: ImageIcon(
-                        AssetImage('assets/icons/Icon awesome-building.png'),
-                        color: Colors.teal[400],
+                      SizedBox(height: 20.0),
+                      Container(
+                        child: TextFormField(
+                          onChanged: (String password) {
+                            this._password = password;
+                          },
+                          textAlignVertical: TextAlignVertical.bottom,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.all(10),
+                            prefixIcon: ImageIcon(
+                              AssetImage('assets/icons/password.png'),
+                              color: AppTheme.iconColor,
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.teal[400]),
+                            ),
+                            hintText: 'Password',
+                          ),
+                          validator: (password) {
+                            if (password.isEmpty || password.length < 8)
+                              return 'Password should be at least 8 characters.';
+                            else
+                              return null;
+                          },
+                        ),
                       ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.teal[400]),
-                      ),
-                      hintText: 'Class name',
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20.0),
-                Container(
-                  child: TextField(
-                    onChanged: (String email) {
-                      this._email = email;
-                    },
-                    textAlignVertical: TextAlignVertical.bottom,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(10),
-                      prefixIcon: Icon(
-                        Icons.email,
-                        color: Colors.teal[400],
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.teal[400]),
-                      ),
-                      hintText: 'Email',
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20.0),
-                Container(
-                  child: TextField(
-                    onChanged: (String password) {
-                      this._password = password;
-                    },
-                    textAlignVertical: TextAlignVertical.bottom,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(10),
-                      prefixIcon: ImageIcon(
-                        AssetImage('assets/icons/password.png'),
-                        color: AppTheme.iconColor,
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.teal[400]),
-                      ),
-                      hintText: 'Password',
-                    ),
+                    ],
                   ),
                 ),
                 SizedBox(
@@ -165,8 +205,6 @@ class _SignUpState extends State<SignUp> {
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                     onPressed: () {
-                      if (this._email == "" || this._email == null) {}
-
                       Student s1 = new Student(
                         name: this._name,
                         className: this._className,
@@ -175,6 +213,10 @@ class _SignUpState extends State<SignUp> {
                         email: this._email,
                       );
                       s1.register();
+                      // s1
+                      //     .register()
+                      //     .then((String token) {})
+                      //     .catchError((err) {});
                       // Navigator.pushNamed(context, '/home');
                     },
                     color: Colors.teal[400],
@@ -209,5 +251,12 @@ class _SignUpState extends State<SignUp> {
         ),
       ),
     );
+  }
+
+  bool validateEmail(String value) {
+    Pattern pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regex = new RegExp(pattern);
+    return (!regex.hasMatch(value)) ? false : true;
   }
 }

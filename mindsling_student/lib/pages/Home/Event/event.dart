@@ -394,7 +394,9 @@ class _EventsState extends State<Events> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/create_event');
+        },
         child: Icon(
           Icons.add,
           color: AppTheme.appBackgroundColor,
