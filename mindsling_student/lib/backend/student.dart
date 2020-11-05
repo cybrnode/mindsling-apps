@@ -1,8 +1,7 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:mindsling_student/utils.dart' as utils;
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:mindsling_student/sharedPreferences.dart' as sp;
 
 class Student {
   String name;
@@ -12,10 +11,10 @@ class Student {
   String rollNumber;
   String password;
   String profilePicture;
-
-  final String authToken = "auth_token";
+  String filePath;
 
   Student({
+    // this.profilePicture,
     this.name,
     this.email,
     this.className,

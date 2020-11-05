@@ -61,7 +61,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
-                  // mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
                       child: TextField(
@@ -77,25 +76,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 6 * SizeConfig.heightMultiplier),
-                    Container(
-                      child: TextField(
-                        textAlignVertical: TextAlignVertical.center,
-                        decoration: InputDecoration(
-                          contentPadding:
-                              EdgeInsets.all(1 * SizeConfig.heightMultiplier),
-                          prefixIcon: ImageIcon(
-                            AssetImage('assets/icons/password.png'),
-                            color: AppTheme.iconColor,
-                          ),
-                          hintText: 'Password',
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
-              SizedBox(height: 6 * SizeConfig.heightMultiplier),
+              SizedBox(height: 3 * SizeConfig.heightMultiplier),
               ButtonTheme(
                 minWidth: MediaQuery.of(context).size.width,
                 height: 8 * SizeConfig.heightMultiplier,

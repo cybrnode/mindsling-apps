@@ -14,6 +14,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
+  bool _showPassword = false;
   String _email;
   String _password;
   String _error;
@@ -78,6 +79,7 @@ class _LoginState extends State<Login> {
                       SizedBox(height: 6 * SizeConfig.heightMultiplier),
                       Container(
                         child: TextFormField(
+                          obscureText: !this._showPassword,
                           onChanged: (String password) {
                             this._password = password;
                           },
@@ -88,6 +90,16 @@ class _LoginState extends State<Login> {
                             prefixIcon: ImageIcon(
                               AssetImage('assets/icons/password.png'),
                               color: AppTheme.iconColor,
+                            ),
+                            suffixIcon: IconButton(
+                              icon: Icon(Icons.remove_red_eye,
+                                  color: this._showPassword
+                                      ? AppTheme.appBackgroundColor
+                                      : AppTheme.subTextColor),
+                              onPressed: () {
+                                setState(() =>
+                                    this._showPassword = !this._showPassword);
+                              },
                             ),
                             hintText: 'Password',
                           ),

@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mindsling_student/backend/student.dart';
+import 'package:mindsling_student/bottomNavigationBar.dart';
 import 'package:mindsling_student/size_config.dart';
 import 'package:mindsling_student/styling.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:mindsling_student/backend/upload.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:http/http.dart' as http;
+import 'package:mindsling_student/utils.dart' as utils;
 
 class SignUp extends StatefulWidget {
+  SignUp({Key key, this.url}) : super(key: key);
+
+  final String url;
   @override
   _SignUpState createState() => _SignUpState();
 }
 
 class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
+  bool _showPassword = false;
   String _name;
   String _email;
   String _className;
@@ -18,7 +28,9 @@ class _SignUpState extends State<SignUp> {
   String _rollNumber;
   String _password;
   String _profilePicture;
-
+  String classdropdownValue = 'Select Class';
+  String secdropdownValue = 'Select Section';
+  final picker = ImagePicker();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +47,7 @@ class _SignUpState extends State<SignUp> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(25.0),
           child: Container(
             // color: Colors.white,
             child: Column(
@@ -43,13 +55,22 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(
                   height: 4 * SizeConfig.heightMultiplier,
                 ),
-                Container(
-                  child: CircleAvatar(
-                    radius: 40,
-                    child: Image.asset('assets/icons/upload.png'),
-                    backgroundColor: Colors.grey[300],
-                  ),
-                ),
+                InkResponse(
+                    child: Container(
+                      child: CircleAvatar(
+                        radius: 40,
+                        child: Image.asset('assets/icons/upload.png'),
+                        backgroundColor: Colors.grey[300],
+                      ),
+                    ),
+                    onTap: () async {
+                      var file =
+                          await picker.getImage(source: ImageSource.gallery);
+                      if (file != null)
+                        Upload.pictureUpload(file.path);
+                      else
+                        Navigator.popAndPushNamed(context, '/signup');
+                    }),
                 SizedBox(height: 1 * SizeConfig.heightMultiplier),
                 Text(
                   'Profile Picture',
@@ -113,31 +134,46 @@ class _SignUpState extends State<SignUp> {
                         ),
                       ),
                       SizedBox(height: 20.0),
-                      Container(
-                        child: TextFormField(
-                          onChanged: (String className) {
-                            this._className = className;
-                          },
-                          textAlignVertical: TextAlignVertical.bottom,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.all(10),
-                            prefixIcon: ImageIcon(
-                              AssetImage(
-                                  'assets/icons/Icon awesome-building.png'),
-                              color: Colors.teal[400],
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Flexible(
+                            // flex: 4,
+                            child: DropdownButton<String>(
+                              icon: Icon(Icons.arrow_drop_down),
+                              isExpanded: true,
+                              value: classdropdownValue,
+                              iconSize: 24,
+                              elevation: 0,
+                              style: TextStyle(color: Colors.black),
+                              underline: Container(
+                                height: 2,
+                                color: AppTheme.appBackgroundColor,
+                              ),
+                              onChanged: (String newValue) {
+                                setState(() {
+                                  classdropdownValue = newValue;
+                                });
+                                this._className = classdropdownValue;
+                              },
+                              items: <String>[
+                                'Select Class',
+                                '1st',
+                                '2nd',
+                                '3rd',
+                                '8th'
+                              ].map<DropdownMenuItem<String>>((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: SizedBox(
+                                      width: 100,
+                                      child: Text(value,
+                                          textAlign: TextAlign.center)),
+                                );
+                              }).toList(),
                             ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.teal[400]),
-                            ),
-                            hintText: 'Class name',
                           ),
-                          validator: (className) {
-                            if (className.isEmpty)
-                              return 'Please enter your class with section.';
-                            else
-                              return null;
-                          },
-                        ),
+                        ],
                       ),
                       SizedBox(height: 20.0),
                       Container(
@@ -168,6 +204,7 @@ class _SignUpState extends State<SignUp> {
                       SizedBox(height: 20.0),
                       Container(
                         child: TextFormField(
+                          obscureText: !this._showPassword,
                           onChanged: (String password) {
                             this._password = password;
                           },
@@ -177,6 +214,16 @@ class _SignUpState extends State<SignUp> {
                             prefixIcon: ImageIcon(
                               AssetImage('assets/icons/password.png'),
                               color: AppTheme.iconColor,
+                            ),
+                            suffixIcon: IconButton(
+                              icon: Icon(Icons.remove_red_eye,
+                                  color: this._showPassword
+                                      ? AppTheme.appBackgroundColor
+                                      : AppTheme.subTextColor),
+                              onPressed: () {
+                                setState(() =>
+                                    this._showPassword = !this._showPassword);
+                              },
                             ),
                             focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.teal[400]),
@@ -212,12 +259,20 @@ class _SignUpState extends State<SignUp> {
                         password: this._password,
                         email: this._email,
                       );
-                      s1.register();
-                      // s1
-                      //     .register()
-                      //     .then((String token) {})
-                      //     .catchError((err) {});
-                      // Navigator.pushNamed(context, '/home');
+                      s1.register().then((String token) async {
+                        SharedPreferences prefs =
+                            await SharedPreferences.getInstance();
+                        prefs.setString('token', token);
+
+                        Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    BottomNavBar()),
+                            (Route<dynamic> route) => false);
+                      }).catchError((e) {
+                        // _error = e;
+                        // alertMsg(context);
+                      });
                     },
                     color: Colors.teal[400],
                     child: Text(
@@ -253,10 +308,26 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
+  String state = "";
   bool validateEmail(String value) {
     Pattern pattern =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     RegExp regex = new RegExp(pattern);
     return (!regex.hasMatch(value)) ? false : true;
   }
+
+  // void alertMsg(BuildContext context) {
+  //   var alertDialog = AlertDialog(
+  //     title: Text("Login Failed"),
+  //     content: Text(
+  //       _error,
+  //       maxLines: 3,
+  //     ),
+  //   );
+  //   showDialog(
+  //       context: context,
+  //       builder: (BuildContext context) {
+  //         return alertDialog;
+  //       });
+  // }
 }
