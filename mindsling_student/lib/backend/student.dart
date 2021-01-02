@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:mindsling_student/utils.dart' as utils;
-import 'package:mindsling_student/sharedPreferences.dart' as sp;
 
 class Student {
   String name;
@@ -14,7 +13,7 @@ class Student {
   String filePath;
 
   Student({
-    // this.profilePicture,
+    this.profilePicture,
     this.name,
     this.email,
     this.className,
@@ -44,6 +43,7 @@ class Student {
       '${utils.HOST_NAME}${utils.STUDENT_SERVICE}/register',
       headers: utils.HEADERS,
       body: jsonEncode({
+        'profile_picture': this.profilePicture,
         'name': this.name,
         "email": this.email,
         'class_name': this.className,

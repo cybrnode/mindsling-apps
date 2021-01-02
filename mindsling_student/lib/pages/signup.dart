@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mindsling_student/backend/student.dart';
@@ -6,6 +8,7 @@ import 'package:mindsling_student/size_config.dart';
 import 'package:mindsling_student/styling.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:mindsling_student/backend/upload.dart';
+import 'package:mindsling_student/backend/school.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'package:mindsling_student/utils.dart' as utils;
@@ -27,10 +30,26 @@ class _SignUpState extends State<SignUp> {
   String _school;
   String _rollNumber;
   String _password;
+  PickedFile _imageFile;
   String _profilePicture;
-  String classdropdownValue = 'Select Class';
-  String secdropdownValue = 'Select Section';
+  String classdropdownValue;
+  String schooldropdownValue;
   final picker = ImagePicker();
+  School s;
+  List schools;
+  void getSchools() async {
+    schools = await School.fetchSchool();
+  }
+
+  void initState() {
+    super.initState();
+    getSchools();
+  }
+
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,21 +75,30 @@ class _SignUpState extends State<SignUp> {
                   height: 4 * SizeConfig.heightMultiplier,
                 ),
                 InkResponse(
-                    child: Container(
-                      child: CircleAvatar(
-                        radius: 40,
-                        child: Image.asset('assets/icons/upload.png'),
-                        backgroundColor: Colors.grey[300],
-                      ),
+                  onTap: () async {
+                    PickedFile file =
+                        await picker.getImage(source: ImageSource.gallery);
+                    if (file != null) {
+                      String profilePicture =
+                          await Upload.pictureUpload(file.path);
+                      print(profilePicture); //printing url of image
+                      print('Image URL from signup form');
+                      setState(() {
+                        _imageFile = file;
+                        this._profilePicture = profilePicture;
+                      });
+                    }
+                  },
+                  child: Container(
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundImage: _imageFile == null
+                          ? AssetImage('assets/icons/upload.png')
+                          : FileImage(File(_imageFile.path)),
+                      backgroundColor: Colors.grey[300],
                     ),
-                    onTap: () async {
-                      var file =
-                          await picker.getImage(source: ImageSource.gallery);
-                      if (file != null)
-                        Upload.pictureUpload(file.path);
-                      else
-                        Navigator.popAndPushNamed(context, '/signup');
-                    }),
+                  ),
+                ),
                 SizedBox(height: 1 * SizeConfig.heightMultiplier),
                 Text(
                   'Profile Picture',
@@ -139,7 +167,44 @@ class _SignUpState extends State<SignUp> {
                         children: [
                           Flexible(
                             // flex: 4,
+                            child: DropdownButton(
+                              hint: Text("Select School"),
+                              icon: Icon(Icons.arrow_drop_down),
+                              isExpanded: true,
+                              iconSize: 24,
+                              elevation: 0,
+                              style: TextStyle(color: Colors.black),
+                              underline: Container(
+                                height: 2,
+                                color: AppTheme.appBackgroundColor,
+                              ),
+                              items: schools?.map((item) {
+                                    if (item != null)
+                                      return new DropdownMenuItem(
+                                        child: new Text(item['name']),
+                                        value: item['name'].toString(),
+                                      );
+                                  })?.toList() ??
+                                  [],
+                              onChanged: (newValue) {
+                                setState(() {
+                                  schooldropdownValue = newValue;
+                                  this._school = schooldropdownValue;
+                                });
+                              },
+                              value: _school,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20.0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Flexible(
+                            // flex: 4,
                             child: DropdownButton<String>(
+                              hint: Text('Select Class'),
                               icon: Icon(Icons.arrow_drop_down),
                               isExpanded: true,
                               value: classdropdownValue,
@@ -153,11 +218,11 @@ class _SignUpState extends State<SignUp> {
                               onChanged: (String newValue) {
                                 setState(() {
                                   classdropdownValue = newValue;
+                                  this._className = classdropdownValue;
                                 });
-                                this._className = classdropdownValue;
+                                print(_className);
                               },
                               items: <String>[
-                                'Select Class',
                                 '1st',
                                 '2nd',
                                 '3rd',
@@ -244,42 +309,47 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(
                   height: 4 * SizeConfig.heightMultiplier,
                 ),
-                ButtonTheme(
-                  minWidth: MediaQuery.of(context).size.width,
-                  height: 8 * SizeConfig.heightMultiplier,
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0),
-                    ),
-                    onPressed: () {
-                      Student s1 = new Student(
-                        name: this._name,
-                        className: this._className,
-                        rollNumber: this._rollNumber,
-                        password: this._password,
-                        email: this._email,
-                      );
-                      s1.register().then((String token) async {
-                        SharedPreferences prefs =
-                            await SharedPreferences.getInstance();
-                        prefs.setString('token', token);
+                Column(
+                  children: [
+                    ButtonTheme(
+                      minWidth: MediaQuery.of(context).size.width,
+                      height: 8 * SizeConfig.heightMultiplier,
+                      child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        onPressed: () {
+                          Student s1 = new Student(
+                            profilePicture: this._profilePicture,
+                            name: this._name,
+                            className: this._className,
+                            rollNumber: this._rollNumber,
+                            password: this._password,
+                            email: this._email,
+                          );
+                          s1.register().then((String token) async {
+                            SharedPreferences prefs =
+                                await SharedPreferences.getInstance();
+                            prefs.setString('token', token);
 
-                        Navigator.of(context).pushAndRemoveUntil(
-                            MaterialPageRoute(
-                                builder: (BuildContext context) =>
-                                    BottomNavBar()),
-                            (Route<dynamic> route) => false);
-                      }).catchError((e) {
-                        // _error = e;
-                        // alertMsg(context);
-                      });
-                    },
-                    color: Colors.teal[400],
-                    child: Text(
-                      'Signup',
-                      style: TextStyle(color: Colors.white),
+                            Navigator.of(context).pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        BottomNavBar()),
+                                (Route<dynamic> route) => false);
+                          }).catchError((e) {
+                            // _error = e;
+                            // alertMsg(context);
+                          });
+                        },
+                        color: Colors.teal[400],
+                        child: Text(
+                          'Signup',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
                 SizedBox(height: 20.0),
                 Row(

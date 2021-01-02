@@ -7,12 +7,26 @@ class Upload {
   String fileName;
   String filePath;
 
-  static void pictureUpload(String fileName) async {
-    var request = http.MultipartRequest(
-        'POST', Uri.parse('${utils.HOST_NAME}${utils.UPLOAD_SERVICE}'));
-    var multipart = await http.MultipartFile.fromPath("img", fileName);
+  static Future<String> pictureUpload(String fileName) async {
+    http.MultipartRequest request = http.MultipartRequest(
+      'POST',
+      Uri.parse('${utils.HOST_NAME}${utils.UPLOAD_SERVICE}'),
+    );
+
+    http.MultipartFile multipart =
+        await http.MultipartFile.fromPath("file", fileName);
+
     if (multipart != null) request.files.add(multipart);
 
-    await request.send();
+    http.StreamedResponse instance = await request.send();
+    String response = await instance.stream.bytesToString();
+    return jsonDecode(response)["url"];
+    // instance.stream.toStringStream().listen((event) {
+    //   imageUrl = event;
+    // }, onDone: () {
+    //   print("onDone");
+    // }, onError: (error) {
+    //   print("onError $error");
+    // }, cancelOnError: false);
   }
 }
